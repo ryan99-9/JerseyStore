@@ -28,10 +28,7 @@ class NavigationBar extends React.Component {
                         </Nav>
                         <h6 style={{color:'white',marginRight:'20px',marginTop:'10px'}}>MANCHESTER UNITED PERFUME</h6>
                         <Button style={style.button} >
-                            <div>
-                                <img style={{height:'25px'}}
-                                src='https://cdn0.iconfinder.com/data/icons/typicons-2/24/shopping-cart-256.png'/>
-                            </div>
+                        <i style={{color:'white'}} class="fas fa-shopping-cart"></i>
                             </Button>
                         <Dropdown style={{marginLeft : '10px'}}>
                             <Dropdown.Toggle style={style.button} id="dropdown-basic">
@@ -51,11 +48,12 @@ class NavigationBar extends React.Component {
 }
 const style = {
     navbar : {
-        backgroundColor : 'rgba(60,88,103,.3)'    
+        backgroundColor : 'rgba(60,88,103,.3)',
+        height:'50px'    
     },
     image : {
-        height : '50px',
-        width : '75px'
+        height : '45px',
+        width : '90px'
     },
     navLink : {
         color :'white',

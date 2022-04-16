@@ -1,0 +1,46 @@
+.bg {
+    background-image: url(https://images.unsplash.com/photo-1598634222670-87c5f558119c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+    background-size: cover ;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center
+}
+.contForm {
+    width: 30vw;
+    height: 60vh;
+    margin-top: 20vh;
+    border: '';
+    background-color: rgba(136,153,167, .3);
+    padding: 2%;
+    border-radius: 20px;
+    backdrop-filter: blur(2px)
+}
+.textLabel {
+    color: #ffffff
+}
+.loginButton {
+    margin-bottom: 5px;
+    background-color: #e2a397;
+    border: none
+}
+.usernameIcon {
+    height: 25px;
+    width: 20px;
+    font-size:20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.textHello {
+    text-align: center;
+     color: #ffffff
+}
+.textHaveAccount {
+    color: white; 
+    font-size: 13px
+}
+.textRegister {
+    color: white; 
+    font-size: 13px
+}

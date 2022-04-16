@@ -1,0 +1,45 @@
+.contForm1 {
+    width: 30vw;
+    height: 72vh;
+    margin-top: 13vh;
+    background-color: rgba(136,153,167, .3);
+    padding: 2%;
+    border-radius: 20px;
+    backdrop-filter: blur(2px)
+}
+.bg {
+    background-image: url(https://images.unsplash.com/photo-1598634222670-87c5f558119c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center
+}
+.textSignUpFree {
+    text-align: center;
+    color: #ffffff
+}
+.textLabel {
+    color: '#ffffff'
+}
+.register{
+    display:flex; 
+    justify-content:center
+}
+.registerButton {
+    margin-bottom: 5px;
+    margin-top: 15px;
+    background-color: #e2a397;
+    border: none
+}
+.textHaveAccount {
+   color: white;
+   font-size: 13px;
+   text-align:center
+}
+.linkLogin {
+    color: white; 
+    font-size: 14px;
+    margin-left: 6px
+}
