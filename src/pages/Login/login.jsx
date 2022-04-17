@@ -26,8 +26,13 @@ class Login extends React.Component {
         //Cek apakah data username dan password yang di input user/diambil sudah ada didatabase 
         axios.get(`http://localhost:2000/users?username=${username}&password=${password}`)
         .then(res=>{
+            //Jika inputan salah
             if(res.data.length === 0) {
-                return this.setState({error:true})
+                return this.setState({errorLogin:true})
+            }//jika inputan benar
+            else{
+                return this.state.res.data
+                
             }
         })
 
@@ -71,7 +76,7 @@ class Login extends React.Component {
                             <Modal.Title>Error</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
-                            <p>Masukan Data Dengan Benar</p>
+                            <p>Input your data before Login Please!</p>
                         </Modal.Body>
                         <Modal.Footer>
                             <Button onClick={()=> this.setState({error:false})} variant="secondary">Close</Button>
@@ -79,10 +84,10 @@ class Login extends React.Component {
                     </Modal>
                     <Modal show={this.state.errorLogin}>
                         <Modal.Header>
-                            <Modal.Title>Error</Modal.Title>
+                            <Modal.Title>Your login is failed</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
-                            <p>This account isn't exist!</p>
+                            <p>This account doesn't exist!</p>
                         </Modal.Body>
                         <Modal.Footer>
                             <Button onClick={()=> this.setState({errorLogin:false})} variant="secondary">Close</Button>
