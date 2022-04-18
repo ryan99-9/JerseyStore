@@ -1,17 +1,17 @@
-import axios from 'axios'
 import React from 'react'
 
 import { InputGroup, FormControl, Button, Modal } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import './Login.css'
+import {connect} from 'react-redux'
+import { login,errLoginfalse } from '../../redux/action/userAction'
 
-class Login extends React.Component {
+class LoginPage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             visibility: false,
             error: false,
-            errorLogin: false
         }
     }
     onLogin = () => {
@@ -24,20 +24,11 @@ class Login extends React.Component {
             return this.setState({error:true})
         }
         //Cek apakah data username dan password yang di input user/diambil sudah ada didatabase 
-        axios.get(`http://localhost:2000/users?username=${username}&password=${password}`)
-        .then(res=>{
-            //Jika inputan salah
-            if(res.data.length === 0) {
-                return this.setState({errorLogin:true})
-            }//jika inputan benar
-            else{
-                return this.state.res.data
-                
-            }
-        })
+        this.props.login(username,password)
 
     }
     render() {
+        console.log(this.props.dataUser)
         const { visibility } = this.state
         return (
             <div className='bg'>
@@ -82,7 +73,7 @@ class Login extends React.Component {
                             <Button onClick={()=> this.setState({error:false})} variant="secondary">Close</Button>
                         </Modal.Footer>
                     </Modal>
-                    <Modal show={this.state.errorLogin}>
+                    <Modal show={this.props.errorLogin}>
                         <Modal.Header>
                             <Modal.Title>Your login is failed</Modal.Title>
                         </Modal.Header>
@@ -90,7 +81,7 @@ class Login extends React.Component {
                             <p>This account doesn't exist!</p>
                         </Modal.Body>
                         <Modal.Footer>
-                            <Button onClick={()=> this.setState({errorLogin:false})} variant="secondary">Close</Button>
+                            <Button onClick={this.props.errLoginfalse} variant="secondary">Close</Button>
                         </Modal.Footer>
                     </Modal>
                 </div>
@@ -99,4 +90,10 @@ class Login extends React.Component {
     }
 }
 
-export default Login
+const mapStateToProps = (take) => {
+    return {
+        errorLogin : take.userReducer.errorLogin,
+        dataUser : take.userReducer
+    }
+}
+export default connect(mapStateToProps,{ login,errLoginfalse })(LoginPage)
