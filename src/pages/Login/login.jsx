@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { InputGroup, FormControl, Button, Modal } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import './Login.css'
 import {connect} from 'react-redux'
 import { login,errLoginfalse } from '../../redux/action/userAction'
@@ -29,6 +29,9 @@ class LoginPage extends React.Component {
     }
     render() {
         console.log(this.props.dataUser)
+        if(this.props.userName){
+            return <Navigate to="/"/> 
+        }
         const { visibility } = this.state
         return (
             <div className='bg'>
@@ -93,7 +96,8 @@ class LoginPage extends React.Component {
 const mapStateToProps = (take) => {
     return {
         errorLogin : take.userReducer.errorLogin,
-        dataUser : take.userReducer
+        dataUser : take.userReducer,
+        userName : take.userReducer.username
     }
 }
 export default connect(mapStateToProps,{ login,errLoginfalse })(LoginPage)

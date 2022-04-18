@@ -264,9 +264,9 @@
     },
     {
       "id": 2,
-      "username": "ken sanders",
-      "password": "ken123!",
-      "email": "kensanders@gmail.com",
+      "username": "zidane",
+      "password": "zidane123",
+      "email": "zidane@gmail.com",
       "role": "user",
       "cart": [
         {
