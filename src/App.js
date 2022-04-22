@@ -5,7 +5,7 @@ import NavigationBar from './component/navigationBar';
 import { Routes, Route } from 'react-router-dom'
 //import component
 import Home from './pages/Home/Home.jsx';
-import Login from './pages/Login/login';
+import LoginPage from './pages/Login/login';
 import Register from './pages/Register/register';
 
 //import Action
@@ -24,10 +24,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <NavigationBar />
+        <NavigationBar/>
         <Routes>
           <Route path='/' element={<Home />} exact />
-          <Route path='/Login' element={<Login />} />
+          <Route path='/Login' element={<LoginPage />} />
           <Route path='/Register' element={<Register />} />
         </Routes>
       </div>

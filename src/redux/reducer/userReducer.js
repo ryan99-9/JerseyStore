@@ -4,8 +4,8 @@ const INITIAL_STATE = {
     password: "",
     role: "",
     errorLogin: false
-
 }
+
 console.log(INITIAL_STATE)
 const userReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
