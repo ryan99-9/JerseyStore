@@ -5,7 +5,7 @@ import NavigationBar from './component/navigationBar';
 import { Routes, Route } from 'react-router-dom'
 //import component
 import Home from './pages/Home/Home.jsx';
-import LoginPage from './pages/Login/login';
+import LoginPage from './pages/Login/login.jsx'
 import Register from './pages/Register/register';
 
 //import Action

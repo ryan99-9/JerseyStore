@@ -55,3 +55,7 @@ export const keepLogin = (id) => {
 
     }
 }
+
+export function register(data) {
+return Axios.post('http://localhost:2000/users', data)
+}
