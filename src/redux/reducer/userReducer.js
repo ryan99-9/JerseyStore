@@ -3,7 +3,9 @@ const INITIAL_STATE = {
     username: "",
     password: "",
     role: "",
-    errorLogin: false
+    errorLogin: false,
+    suksesRegist: false,
+    errorRegist: false
 }
 
 console.log(INITIAL_STATE)
@@ -27,11 +29,21 @@ const userReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 errorLogin: false
             }
-            case 'LOG_OUT':
-                return{
-                    ...state,
-                    username:""
-                }
+        case 'LOG_OUT':
+            return {
+                ...state,
+                username: ""
+            }
+        case 'SUCCESS_REGIST':
+            return {
+                ...state,
+                suksesRegist: true
+            }
+        case 'USERNAME_EMAIL_EXIST':
+            return {
+                ...state,
+                errorRegist: true
+            }
         default:
             return state
     }

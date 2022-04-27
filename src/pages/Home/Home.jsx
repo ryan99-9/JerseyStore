@@ -1,11 +1,12 @@
 import React from 'react'
+import {background} from '../../asset/index'
 
 class Home extends React.Component {
     render () {
         return (
             <div style={style.backGround}>
                 <img style={style.img}
-                src='https://images.unsplash.com/photo-1590736704728-f4730bb30770?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=474&q=80'/>
+                src={background} alt='background'/>
             </div>
         )
     }
@@ -18,7 +19,7 @@ const style = {
 
     },
     backGround :{
-        backgroundColor : 'black',
+        backgroundColor : 'white',
         display :'flex',
         justifyContent:'center'
     }

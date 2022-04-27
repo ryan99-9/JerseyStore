@@ -1,2 +1,2 @@
-export const LOGO = require('./parfume.png')
-export const background = require('./background1.jpg')
+export const LOGO = require('./storeLogo.png')
+export const background = require('./mu.png')

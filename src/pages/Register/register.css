@@ -1,15 +1,15 @@
 .contForm1 {
     width: 30vw;
-    height: 72vh;
+    height: 90vh;
     margin-top: 13vh;
-    background-color: rgba(136,153,167, .3);
+    background-color: rgba(136,153,167, .5);
     padding: 2%;
     border-radius: 20px;
     backdrop-filter: blur(2px)
 }
 .bg {
-    background-image: url(https://images.unsplash.com/photo-1598634222670-87c5f558119c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
-    background-size: cover;
+    background-image: url(../../asset/mu.png);
+    background-size:auto;
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
@@ -42,4 +42,9 @@
     color: white; 
     font-size: 14px;
     margin-left: 6px
+}
+p {
+    font-size: 15px;
+    margin-top: 0px;
+    padding: 0px;
 }

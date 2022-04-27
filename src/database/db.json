@@ -1,4 +1,3 @@
-
 {
   "products": [
     {
@@ -319,6 +318,25 @@
       "role": "user",
       "cart": [],
       "id": 7
+    },
+    {
+      "username": "bambang",
+      "password": "1234",
+      "email": "bambang@gmail.com",
+      "role": "user",
+      "cart": [],
+      "id": 8
+    },
+    {
+      "username": "nurulMukayaroh",
+      "password": "1234",
+      "email": "mukayaroh@gmail.com",
+      "role": "user",
+      "cart": [],
+      "id": 9
+    },
+    {
+      "id": 10
     }
   ],
   "history": [

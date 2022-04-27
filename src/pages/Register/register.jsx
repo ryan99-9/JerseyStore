@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { InputGroup, FormControl, Button } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link,Navigate } from 'react-router-dom'
 import './register.css'
 import { register } from '../../redux/action'
 import { connect } from 'react-redux'
@@ -12,15 +12,18 @@ class Register extends React.Component {
         this.state = {
             visibility: false,
             visibility2: false,
-            errRegist: [false, "onChange blm jalan"]
+            errRegist: [false, "kondisi state awal - onChange blm jalan"],
+            email: [false, "kondisi state awal - onChange blm jalan"]
 
         }
     }
-    onRegister() {
-        let username = document.getElementById("username").value
-        let password = document.getElementById("password").value
-        let email = document.getElementById("email").value
 
+    onRegister=()=> {     
+        let username = this.refs.username.value
+        console.log(username)
+        let password = this.refs.password.value
+        let email = this.refs.email.value
+        
         let addingData = {
             username: username,
             password: password,
@@ -28,7 +31,15 @@ class Register extends React.Component {
             role: "user",
             cart: []
         }
-        this.props.register(addingData)
+        console.log(addingData)
+        
+        //addingData ditambahkan ke DataBase
+        this.props.register(username,email,addingData)
+        
+        if(this.props.errorRegister){
+            alert('data sudah ada')
+        }
+
     }
 
     ruleOfUsername(a) {
@@ -41,25 +52,37 @@ class Register extends React.Component {
         let teksUser = a.target.value
         console.log(teksUser)
         // let symbol = /[!@#$%^&*]/
-        if (teksUser.length === 1 && teksUser.length <= 3) {
-            this.setState({ errRegist: [true, "onChange sudah jalan"] })
-        } else this.setState({errRegist: [false, "onChange blm jalan"]})
+        if (teksUser.length >= 1 && teksUser.length <= 3) {
+            this.setState({ errRegist: [true, "Terlalu pendek namanya"] })
+        } else this.setState({ errRegist: [false, ""] })
     }
 
+    ruleOfEmail(a) {
+        let b = a.target.value
+        let c = '.com'
+        let d = '@'
+        if (!b.includes(c, d) && b.length !==0) {
+            this.setState({ email: [true, "format: example@exam.com"] })
+        } 
+        else this.setState({ email: [false, ""] })
+    }
     render() {
         const { visibility, visibility2 } = this.state
+        //Register sudah sukses
+        if(this.props.succesRegister){
+            return <Navigate to="/Login" />
+        }
         return (
             <div className='bg'>
                 <div className='contForm1'>
                     <h3 className='textSignUpFree'>SIGN UP FOR FREE</h3>
                     <label className='textLabel'>Username</label>
-
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
                         <FormControl
                             onChange={(a) => this.ruleOfUsername(a)}
                             placeholder="Input Here"
-                            id="username"
+                            ref="username"
                         />
                     </InputGroup>
 
@@ -71,10 +94,16 @@ class Register extends React.Component {
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon1"><i class="far fa-envelope"></i></InputGroup.Text>
                         <FormControl
-                            placeholder="Input Here"
-                            id="email"
+                            placeholder="example@exam.com"
+                            ref="email"
+                            type="text"
+                            onChange={(a) => this.ruleOfEmail(a)}
                         />
                     </InputGroup>
+                    <p style={{ color: "red" }}>
+                        {this.state.email[1]}
+                    </p>
+
                     <label className='textLabel'>Password</label>
                     <InputGroup className="mb-3">
                         <InputGroup.Text id="basic-addon1" onClick={() => this.setState({ visibility: !visibility })}>
@@ -83,7 +112,7 @@ class Register extends React.Component {
                         <FormControl
                             placeholder="Input Here"
                             type={visibility ? "text" : "password"}
-                            id="password"
+                            ref="password"
                         />
                     </InputGroup>
                     <label className='textLabel'>Confirm Password</label>
@@ -107,5 +136,11 @@ class Register extends React.Component {
         )
     }
 }
+function mapStateToProps (take){
+return{
+    succesRegister : take.userReducer.succesRegist,
+    errorRegister : take.userReducer.errorRegist
+}
+}
 
-export default connect(null, { register })(Register)
+export default connect(mapStateToProps, { register })(Register)
