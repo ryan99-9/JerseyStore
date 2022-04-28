@@ -58,7 +58,7 @@ class NavigationBar extends React.Component {
                         {/* </Button> */}
                         <Dropdown >
                             <Dropdown.Toggle style={{backgroundColor:'#e8e8e8',border:'none',color:'black'}} id="dropdown-basic">
-                                {this.props.userNameShow ? this.props.userNameShow : "Username"}
+                                {this.props.userNameShow ? `Hello ${this.props.userNameShow}` : "Username"}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
                                 {this.props.userNameShow ?

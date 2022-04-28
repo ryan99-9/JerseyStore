@@ -4,9 +4,30 @@
     padding-left: 20px;
     padding-right: 20px;
     margin-top: 50px;
-    height: 70vh;
+    height: 50vh;
+    width: 85vw;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 .imgCarousel{
-    height: 70vh;
+    width: 100%;
+}
+.product{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 0px;
+    padding: 25px;
+}
+.cardText {
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+.cardButton{
+    display: flex;
+    justify-content: right;
+    box-sizing: border-box;
+    
 }
