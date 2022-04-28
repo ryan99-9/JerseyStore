@@ -1,7 +1,7 @@
 .contForm1 {
     width: 30vw;
-    height: 90vh;
-    margin-top: 13vh;
+    height: 100vh;
+    margin-top: 10vh;
     background-color: rgba(136,153,167, .5);
     padding: 2%;
     border-radius: 20px;
@@ -18,10 +18,10 @@
 }
 .textSignUpFree {
     text-align: center;
-    color: #ffffff
+    color: black
 }
 .textLabel {
-    color: '#ffffff'
+    color: black
 }
 .register{
     display:flex; 
@@ -30,16 +30,14 @@
 .registerButton {
     margin-bottom: 5px;
     margin-top: 15px;
-    background-color: #e2a397;
-    border: none
 }
 .textHaveAccount {
-   color: white;
+   color: black;
    font-size: 13px;
    text-align:center
 }
 .linkLogin {
-    color: white; 
+    color: black; 
     font-size: 14px;
     margin-left: 6px
 }

@@ -12,8 +12,8 @@ class Register extends React.Component {
         this.state = {
             visibility: false,
             visibility2: false,
-            errRegist: [false, "kondisi state awal - onChange blm jalan"],
-            email: [false, "kondisi state awal - onChange blm jalan"]
+            errRegist: [false, ""],
+            email: [false, ""]
 
         }
     }
@@ -72,6 +72,7 @@ class Register extends React.Component {
         if(this.props.succesRegister){
             return <Navigate to="/Login" />
         }
+        console.log(this.props.succesRegister)
         return (
             <div className='bg'>
                 <div className='contForm1'>
@@ -126,7 +127,8 @@ class Register extends React.Component {
                         />
                     </InputGroup>
                     <div className='register'>
-                        <Button className='registerButton' onClick={this.onRegister}>Register</Button>
+                        <Button className='registerButton' onClick={this.onRegister}
+                        >Register</Button>
                     </div>
                     <p className='textHaveAccount'>Have an account
                         <Link to="/Login" className='linkLogin'>Login in
@@ -138,7 +140,7 @@ class Register extends React.Component {
 }
 function mapStateToProps (take){
 return{
-    succesRegister : take.userReducer.succesRegist,
+    succesRegister : take.userReducer.suksesRegist,
     errorRegister : take.userReducer.errorRegist
 }
 }

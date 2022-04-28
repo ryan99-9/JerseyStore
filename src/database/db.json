@@ -337,6 +337,38 @@
     },
     {
       "id": 10
+    },
+    {
+      "username": "pujianto",
+      "password": "1234",
+      "email": "puji@gmail.com",
+      "role": "user",
+      "cart": [],
+      "id": 11
+    },
+    {
+      "username": "pujiarto",
+      "password": "1234",
+      "email": "pujian@gmail.com",
+      "role": "user",
+      "cart": [],
+      "id": 12
+    },
+    {
+      "username": "pujiarto78",
+      "password": "1234",
+      "email": "pujian89@gmail.com",
+      "role": "user",
+      "cart": [],
+      "id": 13
+    },
+    {
+      "username": "owen",
+      "password": "1234",
+      "email": "owen@gmail.com",
+      "role": "user",
+      "cart": [],
+      "id": 14
     }
   ],
   "history": [
