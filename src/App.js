@@ -7,6 +7,7 @@ import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home/Home.jsx';
 import LoginPage from './pages/Login/login.jsx'
 import Register from './pages/Register/register';
+import DetailPage from './pages/DetailPage/detailPage.jsx'
 
 //import Action
 import { keepLogin } from './redux/action';
@@ -28,6 +29,7 @@ class App extends React.Component {
           <Route path='/' element={<Home />} exact />
           <Route path='/Login' element={<LoginPage />} />
           <Route path='/Register' element={<Register />} />
+          <Route path='/detail' element={<DetailPage />} />
         </Routes>
       </div>
     );

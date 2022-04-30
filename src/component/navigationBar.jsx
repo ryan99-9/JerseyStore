@@ -4,7 +4,7 @@ import {
     Container,
     Nav,
     Dropdown,
-    Button,
+    // Button,
     Image,
     InputGroup,
     FormControl
@@ -57,7 +57,9 @@ class NavigationBar extends React.Component {
                             {/* <i style={{ color: 'white' }} class="fas fa-shopping-cart"></i> */}
                         {/* </Button> */}
                         <Dropdown >
-                            <Dropdown.Toggle style={{backgroundColor:'#e8e8e8',border:'none',color:'black'}} id="dropdown-basic">
+                            <Dropdown.Toggle style={{backgroundColor:'#e8e8e8',border:'none',color:'black'}} 
+                            id="dropdown-basic"
+                            >
                                 {this.props.userNameShow ? `Hello ${this.props.userNameShow}` : "Username"}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>

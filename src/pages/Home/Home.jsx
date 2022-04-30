@@ -4,6 +4,7 @@ import NavigationBar from '../../component/navigationBar'
 import Axios from 'axios'
 import { Carousel, Card, Button } from 'react-bootstrap'
 import './home.css'
+import {Link} from 'react-router-dom'
 
 class Home extends React.Component {
     constructor(props) {
@@ -24,7 +25,6 @@ class Home extends React.Component {
                 this.setState({ products: res.data })
             })
         console.log(this.state.products)
-
     }
     render() {
         console.log(this.state.carousels)
@@ -74,11 +74,15 @@ class Home extends React.Component {
                                     </Card.Text>
                                     <div className='cardButton'>
                                         <p onClick={()=>this.setState({whislist:true})}>{this.state.whislist? <i class="fas fa-heart"></i>:<i class="far fa-heart"></i>}</p>
-                                        <p style={{marginLeft:'20px'}}><i class="fal fa-shopping-cart"></i></p>
+                                        {/* <p style={{marginLeft:'20px'}} as={Link} to="/detail"></p> */}
                                         {/* <Button  
                                         style={{backgroundColor:'white',border:'none',color:'black'}}>
-                                            </Button>
-                                        <Button style={{backgroundColor:'white',border:'none',color:'black'}}></Button> */}
+                                            </Button> */}
+                                        <Button 
+                                        style={{backgroundColor:'white',border:'none',color:'black'}} 
+                                        as={Link} to={`/detail?${item.id}`} 
+                                        // target='_blank'
+                                        ><i class="fal fa-shopping-cart"></i></Button>
                                     </div>
                                     
                                 </Card.Body>

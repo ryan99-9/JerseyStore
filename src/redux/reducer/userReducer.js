@@ -8,7 +8,7 @@ const INITIAL_STATE = {
     errorRegist: false
 }
 
-console.log(INITIAL_STATE)
+// console.log(INITIAL_STATE)
 const userReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case 'LOGIN':
