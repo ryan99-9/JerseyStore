@@ -4,7 +4,7 @@ import NavigationBar from '../../component/navigationBar'
 import Axios from 'axios'
 import { Carousel, Card, Button } from 'react-bootstrap'
 import './home.css'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class Home extends React.Component {
     constructor(props) {
@@ -12,7 +12,7 @@ class Home extends React.Component {
         this.state = {
             carousels: [],
             products: [],
-            whislist: false,
+            // productWithWish: [],
         }
     }
     componentDidMount() {
@@ -20,14 +20,60 @@ class Home extends React.Component {
             .then(res => {
                 this.setState({ carousels: res.data })
             })
+
         Axios.get('http://localhost:2000/products')
             .then(res => {
                 this.setState({ products: res.data })
             })
-        console.log(this.state.products)
+
+        //mengaktifkan wishlit. menambahkan properti : false. manual ? lewat function?
+        // Axios.get('http://localhost:2000/products')
+        //     .then(res => {
+        //         res.data.map(item => {
+        //             console.log(res.data)
+        //             return (
+        //                 Axios.post(`http://localhost:2000/products/${item.id}`, `wishlist:${false}`)
+        //                     .then(result => {
+        //                         console.log(result.data)
+        //                         Axios.get('http://localhost:2000/products')
+        //                             .then(ress => {
+        //                                 this.setState({ products: ress.data })
+        //                             })
+        //                     })
+        //             )
+        //         })
+        //     })
+
+        // this.state.products.map(item => {
+        //     return (
+        //         Axios.post(`http://localhost:2000/products/${item.id}`,{wishlist: false})
+        //     )
+        // })
+
+        // console.log(this.state.products)
+        // console.log(this.state.productWithWish)
+
     }
+
+    wishlist = (a) => {
+        Axios.patch(`http://localhost:2000/products/${a}`,{wishlist:true})
+        // .then(res=>{
+        //     Axios.get('http://localhost:2000/products')
+        //     .then(res => {
+        //         this.setState({ products: res.data })
+        //         console.log(res.data)
+        //     })
+        // })
+
+        // let idProduct = document.location.href.substring(23, 24)
+        // console.log(idProduct)
+        // this.setState({ id: idProcut })
+        // this.setState({ wishlist: true })
+    }
+
     render() {
-        console.log(this.state.carousels)
+        // console.log(this.state.carousels)
+        // console.log(document.location.href)
 
         return (
             <div>
@@ -53,7 +99,7 @@ class Home extends React.Component {
                         })}
                     </Carousel>
                 </div>
-                <div style={{marginTop:'220px',padding:'40px',marginBottom:'20px'}}>
+                <div style={{ marginTop: '220px', padding: '40px', marginBottom: '20px' }}>
                     <h2>Special Product</h2>
                 </div>
                 <div className='product'>
@@ -70,21 +116,25 @@ class Home extends React.Component {
                                         IDR {item.price.toLocaleString()}
                                     </Card.Text>
                                     <Card.Text className='cardText'>
-                                       Stock {item.stock}
+                                        Stock {item.stock}
                                     </Card.Text>
                                     <div className='cardButton'>
-                                        <p onClick={()=>this.setState({whislist:true})}>{this.state.whislist? <i class="fas fa-heart"></i>:<i class="far fa-heart"></i>}</p>
+                                        <Button
+                                            onClick={()=>this.wishlist(item.id)}
+                                            // as={Link} to={`/?${item.id}`}
+                                            style={{ backgroundColor: 'white', border: 'none', color: 'black' }}
+                                        >{item.wishlist ? <i class="fas fa-heart"></i> : <i class="far fa-heart"></i>}</Button>
                                         {/* <p style={{marginLeft:'20px'}} as={Link} to="/detail"></p> */}
                                         {/* <Button  
                                         style={{backgroundColor:'white',border:'none',color:'black'}}>
                                             </Button> */}
-                                        <Button 
-                                        style={{backgroundColor:'white',border:'none',color:'black'}} 
-                                        as={Link} to={`/detail?${item.id}`} 
-                                        // target='_blank'
+                                        <Button
+                                            style={{ backgroundColor: 'white', border: 'none', color: 'black' }}
+                                            as={Link} to={`/detail?${item.id}`}
+                                            target='_blank'
                                         ><i class="fal fa-shopping-cart"></i></Button>
                                     </div>
-                                    
+
                                 </Card.Body>
                             </Card>
                         )

@@ -10,6 +10,7 @@
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
       "price": 2500000,
       "stock": 13,
+      "wishlist":false,
       "images": [
         "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/0e7455dd-c1e4-4148-b4c7-9897304f0508/zoomx-invincible-run-flyknit-2-road-running-shoes-xrCMmF.png"
       ]
@@ -24,6 +25,7 @@
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
       "price": 1500000,
       "stock": 10,
+      "wishlist":false,
       "images": [
         "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/g/r/gr4206_f_model_ecom.jpg"
       ]
@@ -38,6 +40,7 @@
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
       "price": 1780000,
       "stock": 9,
+      "wishlist":false,
       "images": [
         "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/g/m/gm0213_f_model_ecom.jpg"
       ]
@@ -52,8 +55,9 @@
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
       "price": 2680000,
       "stock": 10,
+      "wishlist":false,
       "images": [
-       "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/E/E/EE2378_F_Model_eCom.jpg"
+        "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/E/E/EE2378_F_Model_eCom.jpg"
       ]
     },
     {
@@ -66,6 +70,7 @@
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
       "price": 2345000,
       "stock": 12,
+      "wishlist":false,
       "images": [
         "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/F/M/FM4292_FC_eCom.jpg"
       ]
@@ -80,6 +85,7 @@
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
       "price": 1987300,
       "stock": 10,
+      "wishlist":false,
       "images": [
         "https://www.adidas.co.id/media/catalog/product/cache/ffbe5d912e2813a20bb27461a01c1e7c/g/u/gu0065_d1_ecom.jpg"
       ]
@@ -94,6 +100,7 @@
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
       "price": 678956,
       "stock": 8,
+      "wishlist":false,
       "images": [
         "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/h/4/h40951_w_ecom.jpg"
       ]
@@ -108,6 +115,7 @@
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
       "price": 543786,
       "stock": 12,
+      "wishlist":false,
       "images": [
         "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/G/I/GI6463_F_Model_eCom.jpg"
       ]
@@ -122,6 +130,7 @@
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
       "price": 879650,
       "stock": 15,
+      "wishlist":false,
       "images": [
         "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/g/m/gm7186_f_model_ecom.jpg"
       ]
@@ -136,6 +145,7 @@
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
       "price": 543000,
       "stock": 13,
+      "wishlist":false,
       "images": [
         "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/g/r/gr2934_f_model_ecom.jpg"
       ]
@@ -150,6 +160,7 @@
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
       "price": 2314870,
       "stock": 9,
+      "wishlist":false,
       "images": [
         "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/f/x/fx1981_sl_ecom.jpg"
       ]
@@ -164,6 +175,7 @@
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
       "price": 1345650,
       "stock": 10,
+      "wishlist":false,
       "images": [
         "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/fa49236e-bc0b-4194-996c-5148086aa5cf/air-zoom-pegasus-39-road-running-shoes-kmZSD6.png"
       ]
