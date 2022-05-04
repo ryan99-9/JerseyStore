@@ -1,43 +1,70 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Axios from 'axios'
-import { useSearchParams } from 'react-router-dom'
+import './detailPage.css'
+import { Carousel } from 'react-bootstrap'
+import navigationBar from '../../component/navigationBar'
 
-function DetailPage() {
-    let [searchParams, setSearchParams] = useSearchParams();
 
-    useEffect(() => {
-        let url = document.location.href
-        console.log(url)
-        // console.log(document.location.query)
-        let urlString = document.location.href.toString()
-        console.log(urlString)
+class DetailPage extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            product: [],
+        }
+    }
 
-        let idFromUrl = url.substring(29,30)
-        console.log(idFromUrl)
 
-        // let params = new URLSearchParams(document.location.search)
-        // console.log(params)
-        // let user = params.get("name");
-        // console.log(user)
-        // let id = parseInt(params.get("id"))
-        // console.log(id)
-        // Update the document title using the browser API
-        Axios.get(`http://localhost:2000/products/${idFromUrl}`)
+    componentDidMount() {
+        let idUrl = document.location.href.substring(29, 30)
+        console.log(idUrl)
+        Axios.get(`http://localhost:2000/products/${idUrl}`)
             .then(res => {
-                console.log(res.data)
-                setSearchParams(res.data)
-                // this.setState({ product: res.data })
-                // console.log(this.state.product)
+                this.setState({ product: res.data })
             })
-    });
-    
+    }
 
+    render() {
+        const { product } = this.state
+        return (
+            <div>
+               <navigationBar/> 
+                <div>
 
+                </div>
+               <div className='layer'>
+                <div>
+                    <img src={product.images} alt='product' />
+                    {/* <Carousel>
+                       {(product.images? product.images:"").map(item => {
+                        return (
+                            <Carousel.Item>
+                                <img
+                                    className="d-block"
+                                    src={item}
+                                    alt="First slide"
+                                />
+                            </Carousel.Item>
+                        )
+                    })}
+                   </Carousel> */}
+                </div>
+                <div className='detail'>
+                    <p className='name'>{product.name}</p>
+                    <p>Brand : {product.brand}</p>
+                    <p>Category : {product.category}</p>
+                    <p>Description : {product.description}</p>
+                    <p>IDR {product.price} </p>
+                    <p>Stock : {product.stock} </p>
+                    <p>{product.wishlist? 
+                    <i class="fas fa-heart" style={{color:"red", border:"none"}}></i>:
+                    <i class="fas fa-heart" style={{color:"grey", border:"none"}}></i> }</p>
+                </div>
+            </div> 
+            </div>
+            
+        )
+    }
 
-
-    return (
-        <h1>{searchParams}</h1>
-    )
 }
 
 export default DetailPage

@@ -12,7 +12,6 @@ class Home extends React.Component {
         this.state = {
             carousels: [],
             products: [],
-            // productWithWish: [],
         }
     }
     componentDidMount() {
@@ -52,18 +51,17 @@ class Home extends React.Component {
 
         // console.log(this.state.products)
         // console.log(this.state.productWithWish)
-
     }
 
-    wishlist = (a) => {
-        Axios.patch(`http://localhost:2000/products/${a}`,{wishlist:true})
-        // .then(res=>{
-        //     Axios.get('http://localhost:2000/products')
-        //     .then(res => {
-        //         this.setState({ products: res.data })
-        //         console.log(res.data)
-        //     })
-        // })
+    wishlist = (id) => {
+        Axios.patch(`http://localhost:2000/products/${id}`, { wishlist: true })
+            .then(res => {
+                Axios.get('http://localhost:2000/products')
+                    .then(res => {
+                        this.setState({ products: res.data })
+                        console.log(res.data)
+                    })
+            })
 
         // let idProduct = document.location.href.substring(23, 24)
         // console.log(idProduct)
@@ -71,9 +69,20 @@ class Home extends React.Component {
         // this.setState({ wishlist: true })
     }
 
+    unWishlist = (id) => {
+        Axios.patch(`http://localhost:2000/products/${id}`, { wishlist: false })
+            .then(res => {
+                Axios.get('http://localhost:2000/products')
+                    .then(res => {
+                        this.setState({ products: res.data })
+                        
+                    })
+            })
+    }
     render() {
         // console.log(this.state.carousels)
         // console.log(document.location.href)
+        console.log(this.state.products);
 
         return (
             <div>
@@ -120,16 +129,34 @@ class Home extends React.Component {
                                     </Card.Text>
                                     <div className='cardButton'>
                                         <Button
-                                            onClick={()=>this.wishlist(item.id)}
+                                            variant="light"
+                                            onClick={() => this.unWishlist(item.id)}
+                                            style={{ backgroundColor: 'white', border: 'none', color: 'black',marginRight:'3px' }}>
+                                            {item.wishlist ?
+                                                <i class="far fa-trash-undo"></i>
+                                                :
+                                                <i class="fad fa-trash-undo-alt"></i>
+                                            }
+                                        </Button>
+
+                                        <Button
+                                            variant="light"
+                                            onClick={() => this.wishlist(item.id)}
                                             // as={Link} to={`/?${item.id}`}
-                                            style={{ backgroundColor: 'white', border: 'none', color: 'black' }}
-                                        >{item.wishlist ? <i class="fas fa-heart"></i> : <i class="far fa-heart"></i>}</Button>
+                                            style={{ backgroundColor: 'white', border: 'none', color: 'black',marginRight:'3px' }}
+                                        >{item.wishlist ?
+                                            <i class="fas fa-heart"></i>
+                                            :
+                                            <i class="far fa-heart"></i>
+                                            }
+                                        </Button>
                                         {/* <p style={{marginLeft:'20px'}} as={Link} to="/detail"></p> */}
                                         {/* <Button  
                                         style={{backgroundColor:'white',border:'none',color:'black'}}>
                                             </Button> */}
                                         <Button
-                                            style={{ backgroundColor: 'white', border: 'none', color: 'black' }}
+                                            variant="light"
+                                            style={{ backgroundColor: 'white', border: 'none', color: 'black'}}
                                             as={Link} to={`/detail?${item.id}`}
                                             target='_blank'
                                         ><i class="fal fa-shopping-cart"></i></Button>
