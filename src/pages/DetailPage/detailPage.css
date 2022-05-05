@@ -1,11 +1,24 @@
 .layer{
     display: flex;
-    justify-content: space-between;
+    margin-top: 0px;
+}
+.contImg{
+    background-color: blue;
+    width: 50%;
 }
 .detail{
-    padding: 20px;
-    background-color:#e8e8e8 ;
+    padding: 10px;
+    width: 50%;
+    background-color:#c7c2c2 ;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.img{
+    height: 35%;
+    width: 35%;
+    margin-left: 120px;
+    margin-top: 1px;
+    margin-bottom: 30px;
+    
 }
 .name{
     font-weight: bold;

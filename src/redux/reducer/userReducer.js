@@ -5,7 +5,7 @@ const INITIAL_STATE = {
     role: "",
     errorLogin: false,
     suksesRegist: false,
-    errorRegist: false
+    errorRegist: false,
 }
 
 // console.log(INITIAL_STATE)

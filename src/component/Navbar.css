@@ -2,6 +2,7 @@
     background-color: #e8e8e8;
     height: 60px;
     box-sizing: border-box;
+    position: fixed;
 }
 .logo_name{
    display: flex; 

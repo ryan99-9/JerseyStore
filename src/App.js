@@ -8,6 +8,8 @@ import Home from './pages/Home/Home.jsx';
 import LoginPage from './pages/Login/login.jsx'
 import Register from './pages/Register/register';
 import DetailPage from './pages/DetailPage/detailPage.jsx'
+import Cart from './pages/cart/cart.jsx'
+import Wishlist from './pages/Wishlist/wishlist.jsx'
 
 //import Action
 import { keepLogin } from './redux/action';
@@ -30,6 +32,8 @@ class App extends React.Component {
           <Route path='/Login' element={<LoginPage />} />
           <Route path='/Register' element={<Register />} />
           <Route path='/detail' element={<DetailPage />} />
+          <Route path='/Cart' element={<Cart />} />
+          <Route path='/Wishlist' element={<Wishlist />} />
         </Routes>
       </div>
     );

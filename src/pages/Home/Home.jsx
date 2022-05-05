@@ -115,7 +115,7 @@ class Home extends React.Component {
                     {this.state.products.map(item => {
                         return (
                             <Card style={{ width: '18rem', marginBottom: '30px' }}>
-                                <Card.Img variant="top" src={item.images} />
+                                <Card.Img variant="top" src={item.images[0]} />
                                 <Card.Body>
                                     <Card.Title className='cardText'>{item.brand} {item.name}</Card.Title>
                                     <Card.Text className='cardText'>

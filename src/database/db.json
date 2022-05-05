@@ -282,7 +282,14 @@
       "password": "1234",
       "email": "bambang@gmail.com",
       "role": "user",
-      "cart": [],
+      "cart": [
+        {
+          "name": "Invincible ZoomX 2",
+          "brand": "NIKE",
+          "price": 2500000,
+          "quantity": 1
+        }
+      ],
       "id": 8
     },
     {
