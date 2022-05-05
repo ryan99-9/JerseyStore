@@ -14,7 +14,8 @@ class DetailPage extends React.Component {
         this.state = {
             product: [],
             qty: 1,
-            toLogin: false
+            toLogin: false,
+            toCart: false
         }
     }
 
@@ -60,6 +61,7 @@ class DetailPage extends React.Component {
             name: product.name,
             brand: product.brand,
             price: product.price,
+            image:product.images[0],
             quantity: qty
         }
         console.log(cart);
@@ -68,13 +70,16 @@ class DetailPage extends React.Component {
             this.setState({ toLogin: true })
         }
         this.props.cart(this.props.userId, cart)
+        this.setState({ toCart: true })
 
 
     }
     render() {
-        const { product, qty, toLogin } = this.state
+        const { product, qty, toLogin,toCart } = this.state
         if (toLogin) {
             return <Navigate to="/Login" />
+        } else if (toCart){
+            return <Navigate to="/Cart" />
         }
         return (
             <div>

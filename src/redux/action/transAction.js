@@ -5,7 +5,7 @@ export const cart = (id, data) => {
         Axios.get(`http://localhost:2000/users/${id}`)
             .then(res => {
                 let tempCart = res.data.cart
-                console.log(res.data)
+                console.log(res.data.cart)
                 tempCart.push(data)
                 Axios.patch(`http://localhost:2000/users/${id}`, { cart: tempCart })
 
