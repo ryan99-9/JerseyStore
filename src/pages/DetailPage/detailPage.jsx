@@ -20,8 +20,8 @@ class DetailPage extends React.Component {
     }
 
     componentDidMount() {
-        let idUrl = document.location.href.substring(29, 30)
-        console.log(idUrl)
+        let idUrl = document.location.href.substring(29, 31)
+        // console.log(idUrl)
         Axios.get(`http://localhost:2000/products/${idUrl}`)
             .then(res => {
                 this.setState({ product: res.data })
@@ -61,7 +61,7 @@ class DetailPage extends React.Component {
             name: product.name,
             brand: product.brand,
             price: product.price,
-            image:product.images[0],
+            image: product.images[0],
             quantity: qty
         }
         console.log(cart);
@@ -75,59 +75,95 @@ class DetailPage extends React.Component {
 
     }
     render() {
-        const { product, qty, toLogin,toCart } = this.state
+        console.log(typeof this.state.product.price);
+        const { product, qty, toLogin, toCart } = this.state
+        console.log(product);
         if (toLogin) {
             return <Navigate to="/Login" />
-        } else if (toCart){
+        } else if (toCart) {
             return <Navigate to="/Cart" />
         }
         return (
             <div>
                 <NavigationBar />
-                <div style={{ marginTop: '70px', textAlign: 'right', padding: '5px' }}>
-                    <Button onClick={this.onCart} >Add to Cart</Button>
-                </div>
                 <div className='layer'>
                     <div className='contImg'>
                         {/* <img src={product.images} alt='product' /> */}
-                        {/* <Carousel >
-                            {(product.images ? product.images : []).map(item => {
+                        <Carousel
+                            style={{ width: '40vw', marginTop: '20px', backgroundColor:'none'}}>
+                            {(product.images ? product.images : []).map((item, index) => {
                                 return (
-                                    <Carousel.Item>
+                                    <Carousel.Item key={index}
+                                        style={{marginTop: '0vh',backgroundColor:'none' }}>
                                         <img
-                                            className="d-block img"
+                                            className="d-block"
                                             src={item}
                                             alt="First slide"
+                                            style={{
+                                                marginRight: 'auto',
+                                                marginLeft: 'auto',
+                                                marginTop: '0vh',
+                                                marginBottom: '100px',
+                                                height: '40vh',
+                                                backgroundColor: 'purple'
+
+                                            }}
                                         />
                                     </Carousel.Item>
                                 )
                             })}
-                        </Carousel> */}
+                        </Carousel>
                     </div>
                     <div className='detail'>
                         <p className='name'>{product.name}</p>
-                        <p>Brand : {product.brand}</p>
-                        <p>Category : {product.category}</p>
+                        <p className='brand'>Brand : {product.brand}</p>
+                        <p className='price'
+                        >Rp {product.price ? product.price.toLocaleString() : ""} </p>
+                        <p style={{ marginBottom: '5px' }}>Category : {product.category}</p>
                         <p>Description : {product.description}</p>
-                        <p>IDR {product.price} </p>
                         <p>Stock : {product.stock} </p>
                         <p>{product.wishlist ?
-                            <i class="fas fa-heart" style={{ color: "black", border: "none" }}></i> :
-                            <i class="fas fa-heart" style={{ color: "grey", border: "none" }}></i>}</p>
+                            <i class="fas fa-heart"
+                                style={{ color: "black", border: "none" }}></i> :
+                            <i class="fas fa-heart"
+                                style={{ color: "grey", border: "none" }}></i>}</p>
                         <p>Quantity</p>
-                        <div style={{ display: 'flex', backgroundColor: 'red' }}>
-                            <Button onClick={this.onMinus}>-</Button>
+                        <div style={{ display: 'flex', width: '30%', textAlign: 'center' }}>
+                            <Button
+                                variant="dark"
+                                onClick={this.onMinus}
+                            >-</Button>
                             <FormControl
                                 value={qty}
                                 onChange={(e) => this.onChange(e)}
+                                style={{ textAlign: 'center' }}
                             />
-                            <Button onClick={this.onPlus} >+</Button>
+                            <Button
+                                variant="dark"
+                                onClick={this.onPlus}
+
+                            >+</Button>
                         </div>
+                    </div>
+                </div>
+                <div style={{ display: 'flex' }}>
+                    <div style={{ backgroundColor: 'none', flexBasis: '40%' }}> </div>
+                    <div className='addCart'>
+                        <Button
+                            variant="outline-dark"
+                            style={{ marginRight: '10px' }}>
+                            <i class="fal fa-comment-alt-dots"></i> Chat</Button>
+                        <Button
+                            variant="outline-dark"
+                            onClick={this.onCart}
+                            style={{ marginLeft: '10px' }}>
+                            <i class="fal fa-cart-plus"></i> Add to Cart</Button>
                     </div>
                 </div>
             </div>
 
         )
+
     }
 
 }

@@ -75,7 +75,7 @@ class Home extends React.Component {
                 Axios.get('http://localhost:2000/products')
                     .then(res => {
                         this.setState({ products: res.data })
-                        
+
                     })
             })
     }
@@ -119,7 +119,7 @@ class Home extends React.Component {
                                 <Card.Body>
                                     <Card.Title className='cardText'>{item.brand} {item.name}</Card.Title>
                                     <Card.Text className='cardText'>
-                                        {item.colour}
+                                        {item.colour} {item.id}
                                     </Card.Text>
                                     <Card.Text className='cardText'>
                                         IDR {item.price.toLocaleString()}
@@ -131,7 +131,7 @@ class Home extends React.Component {
                                         <Button
                                             variant="light"
                                             onClick={() => this.unWishlist(item.id)}
-                                            style={{ backgroundColor: 'white', border: 'none', color: 'black',marginRight:'3px' }}>
+                                            style={{ backgroundColor: 'white', border: 'none', color: 'black', marginRight: '3px' }}>
                                             {item.wishlist ?
                                                 <i class="far fa-trash-undo"></i>
                                                 :
@@ -143,7 +143,7 @@ class Home extends React.Component {
                                             variant="light"
                                             onClick={() => this.wishlist(item.id)}
                                             // as={Link} to={`/?${item.id}`}
-                                            style={{ backgroundColor: 'white', border: 'none', color: 'black',marginRight:'3px' }}
+                                            style={{ backgroundColor: 'white', border: 'none', color: 'black', marginRight: '3px' }}
                                         >{item.wishlist ?
                                             <i class="fas fa-heart"></i>
                                             :
@@ -156,7 +156,7 @@ class Home extends React.Component {
                                             </Button> */}
                                         <Button
                                             variant="light"
-                                            style={{ backgroundColor: 'white', border: 'none', color: 'black'}}
+                                            style={{ backgroundColor: 'white', border: 'none', color: 'black' }}
                                             as={Link} to={`/detail?${item.id}`}
                                             target='_blank'
                                         ><i class="fal fa-shopping-cart"></i></Button>
@@ -166,6 +166,21 @@ class Home extends React.Component {
                             </Card>
                         )
                     })}
+                </div>
+                <div><h3>Payment</h3></div>
+                <div style={{ display: 'flex' }} >
+                    <div style={{ flexBasis: '50%', backgroundColor: 'none' }}><img 
+                    src="../../asset/visa mastercard.png"
+                    alt="payment" /></div>
+                    <div style={{ flexBasis: '50%', backgroundColor: 'blue' }} ><img 
+                    src='../../asset/BRI.png'
+                    alt="payment"/></div>
+                    <div style={{ flexBasis: '50%', backgroundColor: 'grey' }} ><img alt="payment"/></div>
+                </div>
+                <div style={{ display: 'flex' }} >
+                    <div style={{ flexBasis: '50%', backgroundColor: 'purple' }} ><img alt="payment"/></div>
+                    <div style={{ flexBasis: '50%', backgroundColor: 'green' }} ><img alt="payment"/></div>
+                    <div style={{ flexBasis: '50%', backgroundColor: 'pink' }} ><img alt="payment"/></div>
                 </div>
             </div>
         )

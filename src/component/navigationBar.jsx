@@ -56,8 +56,15 @@ class NavigationBar extends React.Component {
                         {/* <Button> */}
                             {/* <i style={{ color: 'white' }} class="fas fa-shopping-cart"></i> */}
                         {/* </Button> */}
-                        <Button variant="Light" as={Link} to="/Wishlist">Wishlist</Button>
-                        <Button variant="Light" as={Link} to="/Cart">Cart</Button>
+                        <Button variant="outline-secondary" 
+                        as={Link} to="/Wishlist"
+                        style={{border:'none'}}
+                        >Wishlist</Button>
+                        <Button 
+                        variant="outline-secondary" 
+                        as={Link} to="/Cart"
+                        style={{border:'none'}}
+                        >Cart</Button>
                         <Dropdown >
                             <Dropdown.Toggle style={{backgroundColor:'#e8e8e8',border:'none',color:'black'}} 
                             id="dropdown-basic"

@@ -364,23 +364,35 @@
       "id": 9
     },
     {
-      "id": 10
-    },
-    {
       "username": "pujianto",
       "password": "1234",
       "email": "puji@gmail.com",
       "role": "user",
       "cart": [],
-      "id": 11
+      "id": 10
     },
     {
       "username": "pujiarto",
       "password": "1234",
       "email": "pujian@gmail.com",
       "role": "user",
-      "cart": [],
-      "id": 12
+      "cart": [
+        {
+          "name": "Invincible ZoomX 2",
+          "brand": "NIKE",
+          "price": 2500000,
+          "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/0e7455dd-c1e4-4148-b4c7-9897304f0508/zoomx-invincible-run-flyknit-2-road-running-shoes-xrCMmF.png",
+          "quantity": 3
+        },
+        {
+          "name": "Invincible ZoomX 2",
+          "brand": "NIKE",
+          "price": 2500000,
+          "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/0e7455dd-c1e4-4148-b4c7-9897304f0508/zoomx-invincible-run-flyknit-2-road-running-shoes-xrCMmF.png",
+          "quantity": 1
+        }
+      ],
+      "id": 11
     },
     {
       "username": "pujiarto78",
@@ -388,15 +400,23 @@
       "email": "pujian89@gmail.com",
       "role": "user",
       "cart": [],
-      "id": 13
+      "id": 12
     },
     {
       "username": "owen",
       "password": "1234",
       "email": "owen@gmail.com",
       "role": "user",
-      "cart": [],
-      "id": 14
+      "cart": [
+        {
+          "name": "ARSENAL-Polo Shirt",
+          "brand": "ADIDAS",
+          "price": 1500000,
+          "image": "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/g/r/gr4206_f_model_ecom.jpg",
+          "quantity": 4
+        }
+      ],
+      "id": 13
     }
   ],
   "history": [

@@ -1,6 +1,7 @@
 import React from 'react'
 import Axios from 'axios'
 import { connect } from 'react-redux'
+import './cart.css'
 
 class Cart extends React.Component {
     constructor(props) {
@@ -12,7 +13,7 @@ class Cart extends React.Component {
     componentDidMount() {
         let id = this.props.userId
         console.log(this.props.userId)
-        Axios.get(`http://localhost:2000/products/users/${id}`)
+        Axios.get(`http://localhost:2000/users/${id}`)
             .then(res => {
                 console.log(res.data)
                 console.log(res.data.cart)
@@ -21,19 +22,30 @@ class Cart extends React.Component {
     }
     render() {
         const { cart } = this.state
+        console.log(cart);
         return (
             <>
-                <div style={{ display: 'flex' }}>
-                    <div>
-                        <img src={ cart.image? cart.image : ""} />
+            <div className='cart'>Your Cart</div>
+            <div className='alltrans'>Pilih Semua</div>
+            {cart.map(item=>{
+                return(
+                     <div className='layerDisplay'>
+                    <div className='layerImg'>
+                        <img 
+                        className='contImg'
+                        src={item.image} 
+                        alt='product' />
                     </div>
-                    <div>
-                        <p>{cart.name}</p>
-                        <p>{cart.brand}</p>
-                        <p>{cart.quantity}</p>
-                        <p>Total price for this product : </p>
+                    <div className='layerText'>
+                        <p>Product Name : {item.name}</p>
+                        <p>Brand : {item.brand}</p>
+                        <p>Quantity : {item.quantity}</p>
+                        <p>Price : Rp{(item.price*item.quantity).toLocaleString()} </p>
                     </div>
                 </div>
+                )
+            })}
+               
             </>
         )
     }
