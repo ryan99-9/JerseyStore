@@ -3,12 +3,15 @@ const INITIAL_STATE = {
     username: "",
     password: "",
     role: "",
+    cart:[],
     errorLogin: false,
     suksesRegist: false,
     errorRegist: false,
 }
+if(!INITIAL_STATE.id == null){
+  console.log(INITIAL_STATE)  
+}
 
-// console.log(INITIAL_STATE)
 const userReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case 'LOGIN':
@@ -17,9 +20,11 @@ const userReducer = (state = INITIAL_STATE, action) => {
                 id: action.payload.id,
                 username: action.payload.username,
                 password: action.payload.password,
-                role: action.payload.role
+                role: action.payload.role,
+                cart: action.payload.cart
             }
         case 'ERROR_LOGIN':
+            
             return {
                 ...state,
                 errorLogin: true
@@ -44,10 +49,15 @@ const userReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 errorRegist: true
             }
+            case 'CART':
+                return {
+                    ...state,
+                    cart:action.payload.cart
+                }
         default:
             return state
-    }
-}
+    } 
+} 
 
 export default userReducer
 

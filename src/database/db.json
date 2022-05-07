@@ -27,7 +27,7 @@
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
       "price": 1500000,
       "stock": 10,
-      "wishlist": true,
+      "wishlist": false,
       "images": [
         "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/g/r/gr4206_f_model_ecom.jpg",
         "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/g/r/gr4206_f_model_ecom.jpg",
@@ -213,276 +213,50 @@
   ],
   "users": [
     {
-      "id": 1,
       "username": "admin",
       "password": "admin",
       "email": "admin@gmail.com",
       "role": "admin",
-      "cart": []
-    },
-    {
-      "id": 2,
-      "username": "zidane",
-      "password": "zidane123",
-      "email": "zidane@gmail.com",
-      "role": "user",
-      "cart": [
-        {
-          "id": 1,
-          "name": "BAMBOO BAG-TYPE",
-          "image": "https://images.unsplash.com/photo-1554342872-034a06541bad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGJhZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-          "price": 2500000,
-          "qty": 1,
-          "stock": 13
-        }
-      ]
-    },
-    {
-      "username": "kim hana",
-      "email": "kimhana@gmail.com",
-      "password": "kim123!",
-      "role": "user",
-      "id": 3,
-      "cart": []
-    },
-    {
-      "username": "diana lizzy",
-      "email": "dianalizzy@gmail.com",
-      "password": "diana1!",
-      "role": "user",
-      "id": 4,
-      "cart": []
-    },
-    {
-      "username": "Gabriel",
-      "email": "gabriel@gmail.com",
-      "password": "gab123!",
-      "role": "user",
       "cart": [],
-      "id": 5
-    },
-    {
-      "username": "Kim Yoona",
-      "email": "kimyoona@gmail.co",
-      "password": "kim123!",
-      "role": "user",
-      "cart": [],
-      "id": 6
-    },
-    {
-      "username": "Alpha Ken",
-      "email": "alphaken@gmail.com",
-      "password": "alpha1!",
-      "role": "user",
-      "cart": [],
-      "id": 7
+      "id": 1
     },
     {
       "username": "bambang",
-      "password": "1234",
+      "password": "123",
       "email": "bambang@gmail.com",
       "role": "user",
       "cart": [
         {
-          "name": "Invincible ZoomX 2",
-          "brand": "NIKE",
-          "price": 2500000,
-          "quantity": 1
-        },
-        {
-          "name": "ARSENAL-Polo Shirt",
+          "name": "Juventus Pre Match Jersey",
           "brand": "ADIDAS",
-          "price": 1500000,
-          "image": "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/g/r/gr4206_f_model_ecom.jpg",
-          "quantity": 1
+          "price": 543000,
+          "image": "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/g/r/gr2934_f_model_ecom.jpg",
+          "quantity": 13
         },
         {
-          "name": "ARSENAL-Polo Shirt",
+          "name": "Juventus Pre Match Jersey",
           "brand": "ADIDAS",
-          "price": 1500000,
-          "image": "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/g/r/gr4206_f_model_ecom.jpg",
+          "price": 543000,
+          "image": "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/g/r/gr2934_f_model_ecom.jpg",
           "quantity": 1
         },
         {
-          "name": "Invincible ZoomX 2",
-          "brand": "NIKE",
-          "price": 2500000,
-          "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/0e7455dd-c1e4-4148-b4c7-9897304f0508/zoomx-invincible-run-flyknit-2-road-running-shoes-xrCMmF.png",
-          "quantity": 1
-        },
-        {
-          "name": "Invincible ZoomX 2",
-          "brand": "NIKE",
-          "price": 2500000,
-          "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/0e7455dd-c1e4-4148-b4c7-9897304f0508/zoomx-invincible-run-flyknit-2-road-running-shoes-xrCMmF.png",
-          "quantity": 1
-        },
-        {
-          "name": "Invincible ZoomX 2",
-          "brand": "NIKE",
-          "price": 2500000,
-          "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/0e7455dd-c1e4-4148-b4c7-9897304f0508/zoomx-invincible-run-flyknit-2-road-running-shoes-xrCMmF.png",
-          "quantity": 1
-        },
-        {
-          "name": "Invincible ZoomX 2",
-          "brand": "NIKE",
-          "price": 2500000,
-          "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/0e7455dd-c1e4-4148-b4c7-9897304f0508/zoomx-invincible-run-flyknit-2-road-running-shoes-xrCMmF.png",
-          "quantity": 1
-        },
-        {
-          "name": "Invincible ZoomX 2",
-          "brand": "NIKE",
-          "price": 2500000,
-          "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/0e7455dd-c1e4-4148-b4c7-9897304f0508/zoomx-invincible-run-flyknit-2-road-running-shoes-xrCMmF.png",
-          "quantity": 1
-        },
-        {
-          "name": "Invincible ZoomX 2",
-          "brand": "NIKE",
-          "price": 2500000,
-          "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/0e7455dd-c1e4-4148-b4c7-9897304f0508/zoomx-invincible-run-flyknit-2-road-running-shoes-xrCMmF.png",
-          "quantity": 1
-        },
-        {
-          "name": "BOTTLE 750 ml",
+          "name": "Juventus Pre Match Jersey",
           "brand": "ADIDAS",
-          "price": 1987300,
-          "image": "https://www.adidas.co.id/media/catalog/product/cache/ffbe5d912e2813a20bb27461a01c1e7c/g/u/gu0065_d1_ecom.jpg",
-          "quantity": 1
-        }
-      ],
-      "id": 8
-    },
-    {
-      "username": "nurulMukayaroh",
-      "password": "1234",
-      "email": "mukayaroh@gmail.com",
-      "role": "user",
-      "cart": [],
-      "id": 9
-    },
-    {
-      "username": "pujianto",
-      "password": "1234",
-      "email": "puji@gmail.com",
-      "role": "user",
-      "cart": [],
-      "id": 10
-    },
-    {
-      "username": "pujiarto",
-      "password": "1234",
-      "email": "pujian@gmail.com",
-      "role": "user",
-      "cart": [
-        {
-          "name": "Invincible ZoomX 2",
-          "brand": "NIKE",
-          "price": 2500000,
-          "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/0e7455dd-c1e4-4148-b4c7-9897304f0508/zoomx-invincible-run-flyknit-2-road-running-shoes-xrCMmF.png",
-          "quantity": 3
-        },
-        {
-          "name": "Invincible ZoomX 2",
-          "brand": "NIKE",
-          "price": 2500000,
-          "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/0e7455dd-c1e4-4148-b4c7-9897304f0508/zoomx-invincible-run-flyknit-2-road-running-shoes-xrCMmF.png",
-          "quantity": 1
-        }
-      ],
-      "id": 11
-    },
-    {
-      "username": "pujiarto78",
-      "password": "1234",
-      "email": "pujian89@gmail.com",
-      "role": "user",
-      "cart": [],
-      "id": 12
-    },
-    {
-      "username": "owen",
-      "password": "1234",
-      "email": "owen@gmail.com",
-      "role": "user",
-      "cart": [
-        {
-          "name": "ARSENAL-Polo Shirt",
-          "brand": "ADIDAS",
-          "price": 1500000,
-          "image": "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/g/r/gr4206_f_model_ecom.jpg",
+          "price": 543000,
+          "image": "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/g/r/gr2934_f_model_ecom.jpg",
           "quantity": 4
-        }
-      ],
-      "id": 13
-    }
-  ],
-  "history": [
-    {
-      "idUser": 2,
-      "username": "ken sanders",
-      "time": "24/1/2022 15.02.26",
-      "products": [
-        {
-          "id": 2,
-          "name": "CLARISH MULTY HANDLE",
-          "image": "https://images.unsplash.com/photo-1574271143515-5cddf8da19be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aGFuZGJhZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-          "price": 1500000,
-          "qty": 3,
-          "stock": 10
-        }
-      ],
-      "id": 1
-    },
-    {
-      "idUser": 2,
-      "username": "ken sanders",
-      "time": "24/1/2022 16.31.06",
-      "products": [
-        {
-          "id": 2,
-          "name": "CLARISH MULTY HANDLE",
-          "image": "https://images.unsplash.com/photo-1574271143515-5cddf8da19be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aGFuZGJhZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-          "price": 1500000,
-          "qty": 1,
-          "stock": 10
         },
         {
-          "id": 1,
-          "name": "BAMBOO BAG-TYPE",
-          "image": "https://images.unsplash.com/photo-1554342872-034a06541bad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGJhZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-          "price": 2500000,
-          "qty": 1,
-          "stock": 13
+          "name": "MU Away Jersey",
+          "brand": "ADIDAS",
+          "price": 2680000,
+          "image": "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/E/E/EE2378_F_Model_eCom.jpg",
+          "quantity": 10
         }
       ],
       "id": 2
-    },
-    {
-      "idUser": 7,
-      "username": "Alpha Ken",
-      "time": "24/1/2022 18.50.01",
-      "products": [
-        {
-          "id": 3,
-          "name": "PRADA ONE-HAND",
-          "image": "https://images.unsplash.com/photo-1566150902887-9679ecc155ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8aGFuZGJhZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-          "price": 1780000,
-          "qty": 2,
-          "stock": 9
-        },
-        {
-          "id": 2,
-          "name": "CLARISH MULTY HANDLE",
-          "image": "https://images.unsplash.com/photo-1574271143515-5cddf8da19be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aGFuZGJhZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-          "price": 1500000,
-          "qty": 3,
-          "stock": 10
-        }
-      ],
-      "id": 3
     }
-  ]
+  ],
+  "history": []
 }

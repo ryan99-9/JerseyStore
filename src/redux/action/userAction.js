@@ -4,6 +4,8 @@ export const login = (username, password) => {
     return (dispatch) => {
         Axios.get(`http://localhost:2000/users?username=${username}&password=${password}`)
             .then(res => {
+                console.log(res.data[0]);
+                console.log(res.data);
                 //Jika inputan salah
                 if (res.data.length === 0) {
                     return dispatch({
@@ -56,17 +58,7 @@ export const keepLogin = (id) => {
     }
 }
 
-// export const register=(addingData)=> {
-//     return (dispatch) => {
-//         Axios.post('http://localhost:2000/users', addingData)
-//             .then(res => {
-//                 return dispatch({
-//                     type: 'SUCCESS_REGIST',
-//                     payload: res.data
-//                 })
-//             })
-//     }
-// }
+
 
 export const register = (username, email, addingData) => {
     return (dispatch) => {

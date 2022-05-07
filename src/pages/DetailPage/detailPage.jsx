@@ -20,10 +20,12 @@ class DetailPage extends React.Component {
     }
 
     componentDidMount() {
+        // console.log(document.location.href);
         let idUrl = document.location.href.substring(29, 31)
         // console.log(idUrl)
         Axios.get(`http://localhost:2000/products/${idUrl}`)
             .then(res => {
+                // console.log(res.data)
                 this.setState({ product: res.data })
             })
     }
@@ -64,15 +66,20 @@ class DetailPage extends React.Component {
             image: product.images[0],
             quantity: qty
         }
-        console.log(cart);
+        console.log(this.props.userName);
         if (!this.props.userName) {
             // console.log(typeof this.props.userName);
             this.setState({ toLogin: true })
-        }
+        } 
         this.props.cart(this.props.userId, cart)
         this.setState({ toCart: true })
-
-
+        
+        let idCart = this.props.userCart.map(item=>{
+            return (
+                item.id
+            )
+        })
+        console.log(idCart)
     }
     render() {
         console.log(typeof this.state.product.price);
@@ -90,7 +97,7 @@ class DetailPage extends React.Component {
                     <div className='contImg'>
                         {/* <img src={product.images} alt='product' /> */}
                         <Carousel
-                            style={{ width: '40vw', marginTop: '20px', backgroundColor:'none'}}>
+                            style={{ width: '40vw', marginTop: '20px',}}>
                             {(product.images ? product.images : []).map((item, index) => {
                                 return (
                                     <Carousel.Item key={index}
@@ -141,7 +148,6 @@ class DetailPage extends React.Component {
                             <Button
                                 variant="dark"
                                 onClick={this.onPlus}
-
                             >+</Button>
                         </div>
                     </div>
@@ -170,7 +176,8 @@ class DetailPage extends React.Component {
 const mapStateToProps = (take) => {
     return {
         userName: take.userReducer.username,
-        userId: take.userReducer.id
+        userId: take.userReducer.id,
+        userCart: take.userReducer.cart
     }
 }
 export default connect(mapStateToProps, { cart })(DetailPage)

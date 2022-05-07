@@ -167,20 +167,34 @@ class Home extends React.Component {
                         )
                     })}
                 </div>
-                <div><h3>Payment</h3></div>
-                <div style={{ display: 'flex' }} >
-                    <div style={{ flexBasis: '50%', backgroundColor: 'none' }}><img 
-                    src="../../asset/visa mastercard.png"
-                    alt="payment" /></div>
-                    <div style={{ flexBasis: '50%', backgroundColor: 'blue' }} ><img 
-                    src='../../asset/BRI.png'
-                    alt="payment"/></div>
-                    <div style={{ flexBasis: '50%', backgroundColor: 'grey' }} ><img alt="payment"/></div>
+                <div className='payment'>Payment</div>
+                <div style={{ display: 'flex',marginLeft:'3rem',marginRight:'40rem',marginTop:'2rem'}} >
+                    <div style={{ flexBasis: '50%' }}><img
+                        style={{height:'5rem'}}
+                        src="https://1.bp.blogspot.com/-8aj5-2xrgbA/X30_86ndgPI/AAAAAAAAHPA/7LrHzutC85w5iVT_WtYYb3dmGvo5arjUwCLcBGAsYHQ/w640-h320/logo-shopee-pay.png"
+                        alt="payment" /></div>
+                    <div style={{ flexBasis: '50%' }} ><img
+                        style={{height:'5rem'}}
+                        src='https://1.bp.blogspot.com/-GjCpjdW8Hrs/XkXUvE0RseI/AAAAAAAABmk/u5e1zr7RGHQN2TFwPu1IoN8QJBtwXLH5QCLcBGAsYHQ/s400/Logo%2BLink%2BAja%2521.png'
+                        alt="payment" /></div>
+                    <div style={{ flexBasis: '50%'}} ><img
+                        style={{height:'5rem'}}
+                        src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Logo_Indomaret.png/800px-Logo_Indomaret.png'
+                        alt="payment" /></div>
                 </div>
-                <div style={{ display: 'flex' }} >
-                    <div style={{ flexBasis: '50%', backgroundColor: 'purple' }} ><img alt="payment"/></div>
-                    <div style={{ flexBasis: '50%', backgroundColor: 'green' }} ><img alt="payment"/></div>
-                    <div style={{ flexBasis: '50%', backgroundColor: 'pink' }} ><img alt="payment"/></div>
+                <div style={{ display: 'flex',marginLeft:'3rem',marginRight:'40rem',marginTop:'2rem' }} >
+                    <div style={{ flexBasis: '50%'}} ><img
+                        style={{ height: '4rem' }}
+                        src='https://www.freepnglogos.com/uploads/logo-bca-png/bank-bca-solutions-agate-26.png'
+                        alt="payment" /></div>
+                    <div style={{ flexBasis: '50%' }} ><img
+                        style={{ height: '4rem', marginLeft:'2rem' }}
+                        src='https://www.freepnglogos.com/uploads/logo-bca-png/bank-bca-file-bank-bri-logo-svg-wikimedia-commons-8.png'
+                        alt="payment" /></div>
+                    <div style={{ flexBasis: '50%' }} ><img
+                        style={{ height: '5rem', marginLeft:'2rem' }}
+                        src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/MasterCard_early_1990s_logo.png/800px-MasterCard_early_1990s_logo.png?20170118155024'
+                        alt="payment" /></div>
                 </div>
             </div>
         )
