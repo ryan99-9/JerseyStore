@@ -1,5 +1,5 @@
 import React from 'react'
-import Axios from 'axios'
+// import Axios from 'axios'
 import { connect } from 'react-redux'
 import './cart.css'
 
@@ -10,24 +10,27 @@ class Cart extends React.Component {
             cart: [],
         }
     }
-    componentDidMount() {
-        let id = this.props.userId
-        console.log(this.props.userId)
-        Axios.get(`http://localhost:2000/users/${id}`)
-            .then(res => {
-                console.log(res.data)
-                console.log(res.data.cart)
-                this.setState({ cart: res.data.cart })
-            })
-    }
+    // componentDidMount() {
+    //     let id = this.props.userId
+    //     console.log(this.props.userId)
+    //     Axios.get(`http://localhost:2000/users/${id}`)
+    //         .then(res => {
+    //             console.log(res.data)
+    //             console.log(res.data.cart)
+    //             this.setState({ cart: res.data.cart })
+    //         })
+    // }
+
     render() {
-        const { cart } = this.state
-        console.log(cart);
+        // const { cart } = this.state
+        // console.log(cart);
+        const {userCart} = this.props
         return (
             <>
             <div className='cart'>Your Cart</div>
             <div className='alltrans'>Pilih Semua</div>
-            {cart.map(item=>{
+
+            {userCart.map(item=>{
                 return(
                      <div className='layerDisplay'>
                     <div className='layerImg'>
@@ -45,6 +48,8 @@ class Cart extends React.Component {
                 </div>
                 )
             })}
+
+          
                
             </>
         )
@@ -52,7 +57,7 @@ class Cart extends React.Component {
 }
 const mapStateToProps = (take) => {
     return {
-        userId: take.userReducer.id
+        userCart: take.userReducer.cart
     }
 }
 export default connect(mapStateToProps)(Cart)

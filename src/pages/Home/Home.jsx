@@ -5,6 +5,7 @@ import Axios from 'axios'
 import { Carousel, Card, Button } from 'react-bootstrap'
 import './home.css'
 import { Link } from 'react-router-dom'
+import {connect} from 'react-redux'
 
 class Home extends React.Component {
     constructor(props) {
@@ -83,7 +84,7 @@ class Home extends React.Component {
         // console.log(this.state.carousels)
         // console.log(document.location.href)
         console.log(this.state.products);
-
+        console.log(this.props.userReducer);
         return (
             <div>
                 {/* <img style={style.img}
@@ -200,17 +201,9 @@ class Home extends React.Component {
         )
     }
 }
-// const style = {
-//     img: {
-//         width: '40vw',
-//         height: '100vh',
-//         marginTop: '50px'
-
-//     },
-//     backGround: {
-//         backgroundColor: 'blue',
-//         display: 'flex',
-//         justifyContent: 'center'
-//     }
-// }
-export default Home
+const mapStateToProps=(state)=>{
+    return{
+        userReducer : state.userReducer
+    }
+}
+export default connect(mapStateToProps)(Home)

@@ -6,7 +6,16 @@ export const cart = (id, data) => {
             .then(res => {
                 let tempCart = res.data.cart
                 console.log(res.data.cart)
-                tempCart.push(data)
+                let containCart = tempCart.map(item => {
+                    return (
+                        item.id
+                    )
+                })
+                if (containCart.includes(data.id)) {
+                    return tempCart.splice(tempCart.indexOf(data.id).quantity,(tempCart.indexOf(data.id).quantity+data.quantity) )
+                } else {
+                    tempCart.push(data)
+                }
 
                 Axios.patch(`http://localhost:2000/users/${id}`, { cart: tempCart })
                     .then(res => {

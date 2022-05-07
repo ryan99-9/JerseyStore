@@ -15,7 +15,8 @@ class DetailPage extends React.Component {
             product: [],
             qty: 1,
             toLogin: false,
-            toCart: false
+            toCart: false,
+            cart:[]
         }
     }
 
@@ -28,6 +29,7 @@ class DetailPage extends React.Component {
                 // console.log(res.data)
                 this.setState({ product: res.data })
             })
+            this.setState({cart:this.props.userCart})
     }
 
     onPlus = () => {
@@ -64,7 +66,8 @@ class DetailPage extends React.Component {
             brand: product.brand,
             price: product.price,
             image: product.images[0],
-            quantity: qty
+            quantity: qty,
+            id: product.id
         }
         console.log(this.props.userName);
         if (!this.props.userName) {
@@ -74,12 +77,6 @@ class DetailPage extends React.Component {
         this.props.cart(this.props.userId, cart)
         this.setState({ toCart: true })
         
-        let idCart = this.props.userCart.map(item=>{
-            return (
-                item.id
-            )
-        })
-        console.log(idCart)
     }
     render() {
         console.log(typeof this.state.product.price);
@@ -177,7 +174,7 @@ const mapStateToProps = (take) => {
     return {
         userName: take.userReducer.username,
         userId: take.userReducer.id,
-        userCart: take.userReducer.cart
+        userCart: take.userReducer.cart,
     }
 }
 export default connect(mapStateToProps, { cart })(DetailPage)

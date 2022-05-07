@@ -227,32 +227,20 @@
       "role": "user",
       "cart": [
         {
-          "name": "Juventus Pre Match Jersey",
-          "brand": "ADIDAS",
-          "price": 543000,
-          "image": "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/g/r/gr2934_f_model_ecom.jpg",
-          "quantity": 13
+          "name": "Invincible ZoomX 2",
+          "brand": "NIKE",
+          "price": 2500000,
+          "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/0e7455dd-c1e4-4148-b4c7-9897304f0508/zoomx-invincible-run-flyknit-2-road-running-shoes-xrCMmF.png",
+          "quantity": 1,
+          "id": 1
         },
         {
-          "name": "Juventus Pre Match Jersey",
+          "name": "Copa Sense 3 Indoor Sala Boot",
           "brand": "ADIDAS",
-          "price": 543000,
-          "image": "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/g/r/gr2934_f_model_ecom.jpg",
-          "quantity": 1
-        },
-        {
-          "name": "Juventus Pre Match Jersey",
-          "brand": "ADIDAS",
-          "price": 543000,
-          "image": "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/g/r/gr2934_f_model_ecom.jpg",
-          "quantity": 4
-        },
-        {
-          "name": "MU Away Jersey",
-          "brand": "ADIDAS",
-          "price": 2680000,
-          "image": "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/E/E/EE2378_F_Model_eCom.jpg",
-          "quantity": 10
+          "price": 2314870,
+          "image": "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/f/x/fx1981_sl_ecom.jpg",
+          "quantity": 3,
+          "id": 11
         }
       ],
       "id": 2
