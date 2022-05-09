@@ -13,6 +13,7 @@ class Home extends React.Component {
         this.state = {
             carousels: [],
             products: [],
+            wishlist: false
         }
     }
     componentDidMount() {
