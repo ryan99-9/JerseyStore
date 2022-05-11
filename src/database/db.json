@@ -164,7 +164,7 @@
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
       "price": 2314870,
       "stock": 9,
-      "wishlist": true,
+      "wishlist": false,
       "images": [
         "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/f/x/fx1981_sl_ecom.jpg"
       ]
@@ -227,52 +227,13 @@
       "role": "user",
       "cart": [
         {
-          "name": "Invincible ZoomX 2",
-          "brand": "NIKE",
-          "price": 2500000,
-          "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/0e7455dd-c1e4-4148-b4c7-9897304f0508/zoomx-invincible-run-flyknit-2-road-running-shoes-xrCMmF.png",
-          "quantity": 1,
-          "id": 1
-        },
-        {
-          "name": "Copa Sense 3 Indoor Sala Boot",
+          "name": "ARSENAL-Polo Shirt",
           "brand": "ADIDAS",
-          "price": 2314870,
-          "image": "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/f/x/fx1981_sl_ecom.jpg",
-          "quantity": 3,
-          "id": 11
-        },
-        {
-          "name": "MU Away Jersey",
-          "brand": "ADIDAS",
-          "price": 2680000,
-          "image": "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/E/E/EE2378_F_Model_eCom.jpg",
-          "quantity": 1,
-          "id": 4
-        },
-        {
-          "name": "Real Madrid Third Jersey",
-          "brand": "ADIDAS",
-          "price": 678956,
-          "image": "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/h/4/h40951_w_ecom.jpg",
-          "quantity": 1,
-          "id": 7
-        },
-        {
-          "name": "NIKE AIR ZOOM PEGASUS 39",
-          "brand": "NIKE",
-          "price": 1345650,
-          "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/fa49236e-bc0b-4194-996c-5148086aa5cf/air-zoom-pegasus-39-road-running-shoes-kmZSD6.png",
-          "quantity": 10,
-          "id": 12
-        },
-        {
-          "name": "BOTTLE 750 ml",
-          "brand": "ADIDAS",
-          "price": 1987300,
-          "image": "https://www.adidas.co.id/media/catalog/product/cache/ffbe5d912e2813a20bb27461a01c1e7c/g/u/gu0065_d1_ecom.jpg",
-          "quantity": 5,
-          "id": 6
+          "price": 1500000,
+          "image": "https://www.adidas.co.id/media/catalog/product/cache/3bec5fdb79d91223b1a151be2b21ce8d/g/r/gr4206_f_model_ecom.jpg",
+          "quantity": 8,
+          "stock": 10,
+          "id": 2
         }
       ],
       "id": 2

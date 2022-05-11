@@ -67,6 +67,7 @@ class DetailPage extends React.Component {
             price: product.price,
             image: product.images[0],
             quantity: qty,
+            stock:product.stock,
             id: product.id
         }
         console.log(this.props.userName);

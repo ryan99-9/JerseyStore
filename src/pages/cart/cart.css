@@ -9,14 +9,34 @@ background-color: burlywood;
     padding-left: 30px;
     padding-right: 30px;
     margin-top: 20px;
-    box-sizing: border-box;
 }
 .layerImg{
     flex-basis: 30%;
+    
+    
 }
 .layerText{
-    flex-basis: 70%;
+    flex-basis: 50%;
+    
+    margin-top: auto;
+    margin-bottom: auto;
 }
 .contImg{
-    height: 30vh;
+    height: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+.layerEdit{
+    flex-basis: 20%;
+    margin-top: auto;
+    margin-bottom: auto;
+    
+}
+.inputEdit {
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
 }
