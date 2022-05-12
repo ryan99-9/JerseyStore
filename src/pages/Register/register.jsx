@@ -16,22 +16,22 @@ class Register extends React.Component {
             errEmail: [false, ""],
             errPass: [false, ""],
             errRegist: [false, ""],
-            
-
         }
     }
 
     ruleOfUsername(e) {
         let inputUser = e.target.value
-        let symb = /[!&#$%^*]/
-        if (symb.test(inputUser) && inputUser.length > 0 && inputUser.length < 3) {
-            this.setState({ errUsername: [true, "Username couldn't include a symbol"] })
+        console.log(inputUser);
+        // let symb = /^[a-z0-9_.]+$/
+        if (inputUser.length > 0 && inputUser.length < 3) {
+            this.setState({ errUsername: [true, "Username must be 3 characters or more"] })
         } this.setState({ errUsername: [false, ""] })
     }
     ruleOfEmail(e) {
         let inputEmail = e.target.value
-        let regex = /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if (!regex.test(inputEmail) && inputEmail.length > 0) {
+        // let regex = /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        let format = ["@",".com"]
+        if (inputEmail.includes(format[0],format[1]) && inputEmail.length > 0) {
             this.setState({ errEmail: [true, "Emai isn't valid, please type correctly"] })
         }
         this.setState({ errEmail: [false, ""] })
@@ -86,7 +86,7 @@ class Register extends React.Component {
         if (this.props.succesRegister) {
             return <Navigate to="/Login" />
         }
-        console.log(this.props.succesRegister)
+        // console.log(this.props.succesRegister)
         return (
             <div className='bg'>
                 <div className='contForm1'>
