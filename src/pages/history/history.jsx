@@ -4,37 +4,13 @@ import { connect } from 'react-redux'
 import './history.css'
 import { Accordion } from 'react-bootstrap'
 import { getHistory } from '../../redux/action'
-import Navigate from 'react-router-dom'
+import {Navigate }from 'react-router-dom'
 import Axios from 'axios'
 
 class History extends React.Component {
-    // constructor(props) {
-    //     super(props)
-    //     this.state = {
-    //         history:[]
-    //     }
     componentDidMount() {
         this.props.getHistory()
     }
-    // productShow = () => {
-    //     console.log(this.props.product);
-    //     console.log(this.props.time);
-    //     this.props.product.map(item => {
-    //         return (
-    //             <div className='layerDisplay'>
-    //                 <div className='layerImg'>
-    //                     <img className='contImg' src={item.image} alt="product" />
-    //                 </div>
-    //                 <div className='layerText'>
-    //                     <p>Product Name : {item.name}</p>
-    //                     <p>Brand : {item.brand}</p>
-    //                     <p>Quantity : {item.quantity}</p>
-    //                     <p>Price : Rp {(item.price * item.quantity).toLocaleString()} </p>
-    //                 </div>
-    //             </div>
-    //         )
-    //     })
-    // }
 
     render() {
         if (!this.props.userName) {
@@ -47,7 +23,7 @@ class History extends React.Component {
         return (
             <>
                 <NavigationBar />
-                {history.map((item,index) => {
+                {history.reverse().map((item,index) => {
                     return (
                       <div style={{ marginTop: '4rem' }}>
                         <Accordion>
@@ -56,8 +32,8 @@ class History extends React.Component {
                                 <Accordion.Body>
                                    {item.products.map(thing=>{
                                        return(
-                                           <div style={{display:'flex'}}>
-                                               <div>
+                                           <div style={{display:'flex'}} className='mr2 mx-3'>
+                                               <div style={{paddingRight:'2rem'}}>
                                                    <img src={thing.image} style={{height:'11rem'}} />
                                                </div>
                                               <div>
@@ -92,3 +68,25 @@ const mapStateToProps = (take) => {
 
 export default connect(mapStateToProps, { getHistory })(History)
 
+
+
+
+ // productShow = () => {
+    //     console.log(this.props.product);
+    //     console.log(this.props.time);
+    //     this.props.product.map(item => {
+    //         return (
+    //             <div className='layerDisplay'>
+    //                 <div className='layerImg'>
+    //                     <img className='contImg' src={item.image} alt="product" />
+    //                 </div>
+    //                 <div className='layerText'>
+    //                     <p>Product Name : {item.name}</p>
+    //                     <p>Brand : {item.brand}</p>
+    //                     <p>Quantity : {item.quantity}</p>
+    //                     <p>Price : Rp {(item.price * item.quantity).toLocaleString()} </p>
+    //                 </div>
+    //             </div>
+    //         )
+    //     })
+    // }

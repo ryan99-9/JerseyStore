@@ -11,35 +11,58 @@ import DetailPage from './pages/DetailPage/detailPage.jsx'
 import Cart from './pages/cart/cart.jsx'
 import Wishlist from './pages/Wishlist/wishlist.jsx'
 import History from './pages/history/history.jsx';
+import HistoryAdmin from './pages/historyAdmin/historyAdmin.jsx'
+import NotFound from './pages/notFound.jsx';
 
 //import Action
 import { keepLogin } from './redux/action';
 
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
 
 
 
 class App extends React.Component {
-  componentDidMount(){
+  componentDidMount() {
     let id = localStorage.getItem('idUser')
     this.props.keepLogin(id)
   }
   render() {
-    return (
-      <div>
-        <Routes>
-          <Route path='/' element={<Home />} exact />
-          <Route path='/Login' element={<LoginPage />} />
-          <Route path='/Register' element={<Register />} />
-          <Route path='/detail' element={<DetailPage />} />
-          <Route path='/Cart' element={<Cart />} />
-          <Route path='/Wishlist' element={<Wishlist />} />
-          <Route path='/History' element={<History />} />
-        </Routes>
-      </div>
-    );
+    if (this.props.role === "admin") {
+      return (
+        <div>
+          <Routes>
+            <Route path='/' element={<Home />} exact />
+            <Route path='/Login' element={<LoginPage />} />
+            <Route path='/Register' element={<Register />} />
+            <Route path='/detail' element={<DetailPage />} />
+            <Route path='/HistoryAdmin' element={<HistoryAdmin />} />
+            <Route path='*' element={<NotFound />} />
+          </Routes>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <Routes>
+            <Route path='/' element={<Home />} exact />
+            <Route path='/Login' element={<LoginPage />} />
+            <Route path='/Register' element={<Register />} />
+            <Route path='/detail' element={<DetailPage />} />
+            <Route path='/Cart' element={<Cart />} />
+            <Route path='/Wishlist' element={<Wishlist />} />
+            <Route path='/History' element={<History />} />
+            <Route path='*' element={<NotFound />} />
+          </Routes>
+        </div>
+      );
+    }
+
   }
 }
-
-export default connect(null, {keepLogin}) (App);
+const mapStateToProps = (state) => {
+  return {
+    role: state.userReducer.role
+  }
+}
+export default connect(mapStateToProps, { keepLogin })(App);

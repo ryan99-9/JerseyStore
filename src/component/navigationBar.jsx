@@ -25,86 +25,92 @@ class NavigationBar extends React.Component {
         }
     }
     render() {
-        return (
-            <Navbar fixed="top" className="navBg">
-                <div className='logo_name'>
-                    <Image src={LOGO} className="logo" />
-                    <h3 class="nameStore">RedStore</h3>
-                </div>
-                <Container>
-                    {/* <Navbar.Brand href="#home">
+        if (this.props.role === "admin") {
+            return (
+                <Navbar fixed="top" className="navBg">
+                    <div className='logo_name'>
                         <Image src={LOGO} className="logo" />
-                    </Navbar.Brand> */}
-                    <div className="search">
-                        <InputGroup className="mb-3">
-                            <FormControl className="formControl"
-                                placeholder="Manchester United"
-                            />
-                            <InputGroup.Text id="basic-addon1" className="formControl" onClick={() => this.setState({ search: true })} >
-                                {this.state.search ? "cari" : "find"}
-                            </InputGroup.Text>
-                        </InputGroup>
+                        <h3 class="nameStore">RedStore</h3>
                     </div>
+                    <Container>
+                        {/* <Navbar.Brand href="#home">
+                            <Image src={LOGO} className="logo" />
+                        </Navbar.Brand> */}
+                        <div className="search">
+                            <InputGroup className="mb-3">
+                                <FormControl className="formControl"
+                                    placeholder="Manchester United"
+                                />
+                                <InputGroup.Text id="basic-addon1" className="formControl" onClick={() => this.setState({ search: true })} >
+                                    {this.state.search ? "cari" : "find"}
+                                </InputGroup.Text>
+                            </InputGroup>
+                        </div>
 
 
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto">
-                            <Nav.Link className="navbarText" as={Link} to="/">Home</Nav.Link>
-                            <Nav.Link className="navbartext" onSelect={this.NavigationBar}>Kategori</Nav.Link>
-                        </Nav>
-                        {/* <h6 style={{ color: 'white', marginRight: '20px', marginTop: '10px' }}>MANCHESTER UNITED PERFUME</h6> */}
-                        {/* <Button> */}
-                        {/* <i style={{ color: 'white' }} class="fas fa-shopping-cart"></i> */}
-                        {/* </Button> */}
-                        <Button variant="outline-secondary"
-                            as={Link} to="/Wishlist"
-                            style={{ border: 'none' }}
-                        >Wishlist</Button>
-                        <Button variant="outline-secondary"
-                            as={Link} to="/Cart"
-                            style={{ border: 'none' }}>
-                            Cart <Badge bg="secondary">{this.props.cart.length}</Badge>
-                            <span className="visually-hidden">unread messages</span>
-                        </Button>
-                        {/* <Button
-                            variant="outline-secondary"
-                            as={Link} to="/Cart"
-                            style={{ border: 'none' }}
-                        >Cart</Button> */}
-                        <Dropdown >
-                            <Dropdown.Toggle style={{ backgroundColor: '#e8e8e8', border: 'none', color: 'black' }}
-                                id="dropdown-basic"
-                            >
-                                {this.props.userNameShow ? `Hello ${this.props.userNameShow}` : "Username"}
-                            </Dropdown.Toggle>
-                            <Dropdown.Menu>
-                                {this.props.userNameShow ?
-                                    <>
-                                        <Dropdown.Item>Profile</Dropdown.Item>
-                                        <Dropdown.Item as={Link} to="/History" >History</Dropdown.Item>
-                                        <Dropdown.Item onClick={this.props.logOut}>Log Out </Dropdown.Item>
-                                    </>
-                                    :
-                                    <>
-                                        <Dropdown.Item as={Link} to="/Login">Login</Dropdown.Item>
-                                        <Dropdown.Item as={Link} to="/Register">Register</Dropdown.Item>
-                                    </>
-                                }
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <Navbar.Collapse id="basic-navbar-nav">
+                            <Nav className="me-auto">
+                                <Nav.Link className="navbarText" as={Link} to="/">Home</Nav.Link>
+                                <Nav.Link className="navbartext" onSelect={this.NavigationBar}>Kategori</Nav.Link>
+                            </Nav>
+                            {/* <h6 style={{ color: 'white', marginRight: '20px', marginTop: '10px' }}>MANCHESTER UNITED PERFUME</h6> */}
+                            {/* <Button> */}
+                            {/* <i style={{ color: 'white' }} class="fas fa-shopping-cart"></i> */}
+                            {/* </Button> */}
+                            <Button variant="outline-secondary"
+                                as={Link} to="/Wishlist"
+                                style={{ border: 'none' }}
+                            >Wishlist</Button>
+                            <Button variant="outline-secondary"
+                                as={Link} to="/Cart"
+                                style={{ border: 'none' }}>
+                                Cart <Badge bg="secondary">{this.props.cart.length}</Badge>
+                                <span className="visually-hidden">unread messages</span>
+                            </Button>
+                            {/* <Button
+                                variant="outline-secondary"
+                                as={Link} to="/Cart"
+                                style={{ border: 'none' }}
+                            >Cart</Button> */}
+                            <Dropdown >
+                                <Dropdown.Toggle style={{ backgroundColor: '#e8e8e8', border: 'none', color: 'black' }}
+                                    id="dropdown-basic"
+                                >
+                                    {this.props.userNameShow ? `Hello ${this.props.userNameShow}` : "Username"}
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu>
+                                    {this.props.userNameShow ?
+                                        <>
+                                            <Dropdown.Item>Profile</Dropdown.Item>
+                                            <Dropdown.Item as={Link} to="/History" >History</Dropdown.Item>
+                                            <Dropdown.Item onClick={this.props.logOut}>Log Out </Dropdown.Item>
+                                        </>
+                                        :
+                                        <>
+                                            <Dropdown.Item as={Link} to="/Login">Login</Dropdown.Item>
+                                            <Dropdown.Item as={Link} to="/Register">Register</Dropdown.Item>
+                                        </>
+                                    }
 
-                            </Dropdown.Menu>
-                        </Dropdown>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
-        )
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
+            )
+        } else {
+
+        }
+
     }
 }
 
 const mapStateToProps = (take) => {
     return {
         userNameShow: take.userReducer.username,
-        cart:take.userReducer.cart
+        cart: take.userReducer.cart,
+        role: take.userReducer.role
     }
 }
 export default connect(mapStateToProps, { logOut })(NavigationBar)
