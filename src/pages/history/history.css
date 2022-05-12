@@ -1,9 +1,3 @@
-.cart{
-background-color: brown;
-}
-.alltrans{
-background-color: burlywood;
-}
 .layerDisplay{
     display: flex;
     padding-left: 30px;
@@ -26,18 +20,4 @@ background-color: burlywood;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
-}
-.layerEdit{
-    flex-basis: 20%;
-    margin-top: auto;
-    margin-bottom: auto;
-    justify-content: space-between;
-    
-}
-.inputEdit {
-    display: flex;
-    width: 60%;
-    justify-content: space-around;
-    margin-left: auto;
-    margin-right: auto;
 }

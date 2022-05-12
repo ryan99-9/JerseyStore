@@ -10,6 +10,7 @@ import Register from './pages/Register/register';
 import DetailPage from './pages/DetailPage/detailPage.jsx'
 import Cart from './pages/cart/cart.jsx'
 import Wishlist from './pages/Wishlist/wishlist.jsx'
+import History from './pages/history/history.jsx';
 
 //import Action
 import { keepLogin } from './redux/action';
@@ -34,6 +35,7 @@ class App extends React.Component {
           <Route path='/detail' element={<DetailPage />} />
           <Route path='/Cart' element={<Cart />} />
           <Route path='/Wishlist' element={<Wishlist />} />
+          <Route path='/History' element={<History />} />
         </Routes>
       </div>
     );

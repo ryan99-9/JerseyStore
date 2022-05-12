@@ -7,7 +7,8 @@ import {
     Button,
     Image,
     InputGroup,
-    FormControl
+    FormControl,
+    Badge
 
 } from 'react-bootstrap'
 import { LOGO } from '../asset'
@@ -35,16 +36,16 @@ class NavigationBar extends React.Component {
                         <Image src={LOGO} className="logo" />
                     </Navbar.Brand> */}
                     <div className="search">
-                     <InputGroup className="mb-3">
-                        <FormControl className="formControl"
-                            placeholder="Manchester United"
-                        />
-                        <InputGroup.Text id="basic-addon1" className="formControl" onClick={()=>this.setState({search:true})} >
-                            {this.state.search? "cari" : "find"}
-                        </InputGroup.Text>
-                    </InputGroup>   
+                        <InputGroup className="mb-3">
+                            <FormControl className="formControl"
+                                placeholder="Manchester United"
+                            />
+                            <InputGroup.Text id="basic-addon1" className="formControl" onClick={() => this.setState({ search: true })} >
+                                {this.state.search ? "cari" : "find"}
+                            </InputGroup.Text>
+                        </InputGroup>
                     </div>
-                    
+
 
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
@@ -54,20 +55,26 @@ class NavigationBar extends React.Component {
                         </Nav>
                         {/* <h6 style={{ color: 'white', marginRight: '20px', marginTop: '10px' }}>MANCHESTER UNITED PERFUME</h6> */}
                         {/* <Button> */}
-                            {/* <i style={{ color: 'white' }} class="fas fa-shopping-cart"></i> */}
+                        {/* <i style={{ color: 'white' }} class="fas fa-shopping-cart"></i> */}
                         {/* </Button> */}
-                        <Button variant="outline-secondary" 
-                        as={Link} to="/Wishlist"
-                        style={{border:'none'}}
+                        <Button variant="outline-secondary"
+                            as={Link} to="/Wishlist"
+                            style={{ border: 'none' }}
                         >Wishlist</Button>
-                        <Button 
-                        variant="outline-secondary" 
-                        as={Link} to="/Cart"
-                        style={{border:'none'}}
-                        >Cart</Button>
+                        <Button variant="outline-secondary"
+                            as={Link} to="/Cart"
+                            style={{ border: 'none' }}>
+                            Cart <Badge bg="secondary">{this.props.cart.length}</Badge>
+                            <span className="visually-hidden">unread messages</span>
+                        </Button>
+                        {/* <Button
+                            variant="outline-secondary"
+                            as={Link} to="/Cart"
+                            style={{ border: 'none' }}
+                        >Cart</Button> */}
                         <Dropdown >
-                            <Dropdown.Toggle style={{backgroundColor:'#e8e8e8',border:'none',color:'black'}} 
-                            id="dropdown-basic"
+                            <Dropdown.Toggle style={{ backgroundColor: '#e8e8e8', border: 'none', color: 'black' }}
+                                id="dropdown-basic"
                             >
                                 {this.props.userNameShow ? `Hello ${this.props.userNameShow}` : "Username"}
                             </Dropdown.Toggle>
@@ -75,7 +82,7 @@ class NavigationBar extends React.Component {
                                 {this.props.userNameShow ?
                                     <>
                                         <Dropdown.Item>Profile</Dropdown.Item>
-                                        <Dropdown.Item>History</Dropdown.Item>
+                                        <Dropdown.Item as={Link} to="/History" >History</Dropdown.Item>
                                         <Dropdown.Item onClick={this.props.logOut}>Log Out </Dropdown.Item>
                                     </>
                                     :
@@ -96,7 +103,8 @@ class NavigationBar extends React.Component {
 
 const mapStateToProps = (take) => {
     return {
-        userNameShow: take.userReducer.username
+        userNameShow: take.userReducer.username,
+        cart:take.userReducer.cart
     }
 }
 export default connect(mapStateToProps, { logOut })(NavigationBar)
