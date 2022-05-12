@@ -50,7 +50,7 @@ class Home extends React.Component {
     }
     onNextPage = () => {
         this.setState({ page: this.state.page + 1 })
-        
+
     }
     onPrevPage = () => {
         this.setState({ page: this.state.page - 1 })
@@ -136,51 +136,52 @@ class Home extends React.Component {
                             )
                         })}
                     </Carousel>
-                   
+
                 </div>
-                <div style={{ marginTop: '220px', padding: '40px', marginBottom: '20px' }}>
+                <div style={{ marginTop: '14rem', padding: '1rem',marginLeft:'4rem' }}>
                     <h2>Special Product</h2>
                 </div>
-                <div style={{ display: 'flex', marginTop: '2rem', width: '13rem', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <Button
-                        disabled={this.state.page <= 1? true : false}
-                            onClick={this.onPrevPage}
-                            variant="light"><i class="fad fa-angle-double-left"></i></Button>
-                        <p style={{ marginBottom: '0px' }}>page {this.state.page} of {this.state.max}</p>
-                        <Button
-                        disabled={this.state.page >= this.state.max?true:false}
-                            onClick={this.onNextPage}
-                            variant="light"><i class="fad fa-angle-double-right"></i></Button>
-                    </div>
+                <div style={{ display: 'flex', marginTop: '1rem', width: '13rem', justifyContent: 'space-between', alignItems: 'center',marginLeft:'4rem' }}>
+                    <Button
+                        disabled={this.state.page <= 1 ? true : false}
+                        onClick={this.onPrevPage}
+                        variant="light"><i class="fad fa-angle-double-left"></i></Button>
+                    <p style={{ marginBottom: '0px' }}>page {this.state.page} of {this.state.max}</p>
+                    <Button
+                        disabled={this.state.page >= this.state.max ? true : false}
+                        onClick={this.onNextPage}
+                        variant="light"><i class="fad fa-angle-double-right"></i></Button>
+                </div>
                 <div className='product'>
                     {this.onShowProduct()}
                 </div>
                 <div className='payment'>Payment</div>
-                <div style={{ display: 'flex', marginLeft: '3rem', marginRight: '40rem', marginTop: '2rem' }} >
-                    <div style={{ flexBasis: '50%' }}><img
-                        style={{ height: '3rem' }}
-                        src="https://1.bp.blogspot.com/-8aj5-2xrgbA/X30_86ndgPI/AAAAAAAAHPA/7LrHzutC85w5iVT_WtYYb3dmGvo5arjUwCLcBGAsYHQ/w640-h320/logo-shopee-pay.png"
-                        alt="payment" /></div>
-                    <div style={{ flexBasis: '50%' }} ><img
-                        style={{ height: '3rem' }}
+                <div style={{ display: 'flex', marginLeft: '3rem', marginRight: '20rem', marginTop: '2rem', marginBottom:'4rem' }} >
+                    <div className='mr2 mx-3'
+                        style={{}}><img
+                            style={{ height: '4rem' }}
+                            src="https://1.bp.blogspot.com/-8aj5-2xrgbA/X30_86ndgPI/AAAAAAAAHPA/7LrHzutC85w5iVT_WtYYb3dmGvo5arjUwCLcBGAsYHQ/w640-h320/logo-shopee-pay.png"
+                            alt="payment" /></div>
+                    <div style={{}} ><img
+                        style={{ height: '4rem' }}
                         src='https://1.bp.blogspot.com/-GjCpjdW8Hrs/XkXUvE0RseI/AAAAAAAABmk/u5e1zr7RGHQN2TFwPu1IoN8QJBtwXLH5QCLcBGAsYHQ/s400/Logo%2BLink%2BAja%2521.png'
                         alt="payment" /></div>
-                    <div style={{ flexBasis: '50%' }} ><img
-                        style={{ height: '3rem' }}
+                    <div style={{ marginRight: '1rem' }} ><img
+                        style={{ height: '4rem' }}
                         src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Logo_Indomaret.png/800px-Logo_Indomaret.png'
                         alt="payment" /></div>
-                </div>
-                <div style={{ display: 'flex', marginLeft: '3rem', marginRight: '40rem', marginTop: '2rem' }} >
-                    <div style={{ flexBasis: '50%' }} ><img
-                        style={{ height: '3rem' }}
-                        src='https://www.freepnglogos.com/uploads/logo-bca-png/bank-bca-solutions-agate-26.png'
-                        alt="payment" /></div>
-                    <div style={{ flexBasis: '50%' }} ><img
-                        style={{ height: '3rem', marginLeft: '2rem' }}
-                        src='https://www.freepnglogos.com/uploads/logo-bca-png/bank-bca-file-bank-bri-logo-svg-wikimedia-commons-8.png'
-                        alt="payment" /></div>
-                    <div style={{ flexBasis: '50%' }} ><img
-                        style={{ height: '3rem', marginLeft: '2rem' }}
+                    <div className='mr2 mx-1'
+                        style={{}} ><img
+                            style={{ height: '3rem' }}
+                            src='https://www.freepnglogos.com/uploads/logo-bca-png/bank-bca-solutions-agate-26.png'
+                            alt="payment" /></div>
+                    <div className='mr1 mx-1'
+                        style={{}} ><img
+                            style={{ height: '3rem', marginLeft: '2rem' }}
+                            src='https://www.freepnglogos.com/uploads/logo-bca-png/bank-bca-file-bank-bri-logo-svg-wikimedia-commons-8.png'
+                            alt="payment" /></div>
+                    <div style={{}} ><img
+                        style={{ height: '4rem', marginLeft: '2rem' }}
                         src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/MasterCard_early_1990s_logo.png/800px-MasterCard_early_1990s_logo.png?20170118155024'
                         alt="payment" /></div>
                 </div>
@@ -196,4 +197,3 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps)(Home)
 
 
- 
