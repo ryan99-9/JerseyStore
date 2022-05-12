@@ -29,7 +29,7 @@ class LoginPage extends React.Component {
 
     }
     render() {
-        console.log(this.props.dataUser)
+        // console.log(this.props.dataUser)
         if (this.props.userName) {
             return <Navigate to="/" />
         }

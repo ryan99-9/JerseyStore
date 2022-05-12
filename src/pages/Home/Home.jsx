@@ -84,8 +84,8 @@ class Home extends React.Component {
     render() {
         // console.log(this.state.carousels)
         // console.log(document.location.href)
-        console.log(this.state.products);
-        console.log(this.props.userReducer);
+        // console.log(this.state.products);
+        // console.log(this.props.userReducer);
         return (
             <div>
                 {/* <img style={style.img}
@@ -121,7 +121,7 @@ class Home extends React.Component {
                                 <Card.Body>
                                     <Card.Title className='cardText'>{item.brand} {item.name}</Card.Title>
                                     <Card.Text className='cardText'>
-                                        {item.colour} {item.id}
+                                        {item.colour} 
                                     </Card.Text>
                                     <Card.Text className='cardText'>
                                         IDR {item.price.toLocaleString()}

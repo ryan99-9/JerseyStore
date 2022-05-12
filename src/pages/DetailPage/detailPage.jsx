@@ -16,7 +16,8 @@ class DetailPage extends React.Component {
             qty: 1,
             toLogin: false,
             toCart: false,
-            cart:[]
+            cart: [],
+
         }
     }
 
@@ -29,7 +30,7 @@ class DetailPage extends React.Component {
                 // console.log(res.data)
                 this.setState({ product: res.data })
             })
-            this.setState({cart:this.props.userCart})
+        this.setState({ cart: this.props.userCart })
     }
 
     onPlus = () => {
@@ -67,17 +68,17 @@ class DetailPage extends React.Component {
             price: product.price,
             image: product.images[0],
             quantity: qty,
-            stock:product.stock,
+            stock: product.stock,
             id: product.id
         }
         console.log(this.props.userName);
         if (!this.props.userName) {
             // console.log(typeof this.props.userName);
             this.setState({ toLogin: true })
-        } 
+        }
         this.props.cart(this.props.userId, cart)
         this.setState({ toCart: true })
-        
+
     }
     render() {
         console.log(typeof this.state.product.price);
@@ -95,11 +96,11 @@ class DetailPage extends React.Component {
                     <div className='contImg'>
                         {/* <img src={product.images} alt='product' /> */}
                         <Carousel
-                            style={{ width: '40vw', marginTop: '20px',}}>
+                            style={{ width: '40vw', marginTop: '20px', }}>
                             {(product.images ? product.images : []).map((item, index) => {
                                 return (
                                     <Carousel.Item key={index}
-                                        style={{marginTop: '0vh',backgroundColor:'none' }}>
+                                        style={{ marginTop: '0vh', backgroundColor: 'none' }}>
                                         <img
                                             className="d-block"
                                             src={item}
@@ -132,8 +133,9 @@ class DetailPage extends React.Component {
                                 style={{ color: "black", border: "none" }}></i> :
                             <i class="fas fa-heart"
                                 style={{ color: "grey", border: "none" }}></i>}</p>
-                        <p>Quantity</p>
+                        {this.props.role === "user" ? 
                         <div style={{ display: 'flex', width: '30%', textAlign: 'center' }}>
+                            <p>Quantity</p>
                             <Button
                                 variant="dark"
                                 onClick={this.onMinus}
@@ -148,21 +150,25 @@ class DetailPage extends React.Component {
                                 onClick={this.onPlus}
                             >+</Button>
                         </div>
+                            : ""}
                     </div>
                 </div>
                 <div style={{ display: 'flex' }}>
                     <div style={{ backgroundColor: 'none', flexBasis: '40%' }}> </div>
                     <div className='addCart'>
-                        <Button
+                        {/* <Button
                             variant="outline-dark"
                             style={{ marginRight: '10px' }}>
-                            <i class="fal fa-comment-alt-dots"></i> Chat</Button>
-                        <Button
+                            <i class="fal fa-comment-alt-dots"></i> Chat</Button> */}
+
+                        {this.props.role === "user" ? <Button
                             variant="outline-dark"
                             onClick={this.onCart}
                             style={{ marginLeft: '10px' }}>
-                            <i class="fal fa-cart-plus"></i> Add to Cart</Button>
+                            <i class="fal fa-cart-plus"></i> Add to Cart</Button> : ""}
+
                     </div>
+
                 </div>
             </div>
 
@@ -176,6 +182,7 @@ const mapStateToProps = (take) => {
         userName: take.userReducer.username,
         userId: take.userReducer.id,
         userCart: take.userReducer.cart,
+        role: take.userReducer.role
     }
 }
 export default connect(mapStateToProps, { cart })(DetailPage)

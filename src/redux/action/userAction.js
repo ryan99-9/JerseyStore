@@ -4,8 +4,8 @@ export const login = (username, password) => {
     return (dispatch) => {
         Axios.get(`http://localhost:2000/users?username=${username}&password=${password}`)
             .then(res => {
-                console.log(res.data[0]);
-                console.log(res.data);
+                // console.log(res.data[0]);
+                // console.log(res.data);
                 //Jika inputan salah
                 if (res.data.length === 0) {
                     return dispatch({

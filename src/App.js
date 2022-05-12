@@ -41,6 +41,21 @@ class App extends React.Component {
           </Routes>
         </div>
       );
+    } else if(this.props.role === "user") {
+      return (
+        <div>
+          <Routes>
+            <Route path='/' element={<Home />} exact />
+            <Route path='/Login' element={<LoginPage />} />
+            <Route path='/Register' element={<Register />} />
+            <Route path='/detail' element={<DetailPage />} />
+            <Route path='/Cart' element={<Cart />} />
+            <Route path='/Wishlist' element={<Wishlist />} />
+            <Route path='/History' element={<History />} />
+            <Route path='*' element={<NotFound />} />
+          </Routes>
+        </div>
+      );
     } else {
       return (
         <div>

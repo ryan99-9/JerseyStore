@@ -35,10 +35,7 @@ const userReducer = (state = INITIAL_STATE, action) => {
                 errorLogin: false
             }
         case 'LOG_OUT':
-            return {
-                ...state,
-                username: ""
-            }
+            return INITIAL_STATE
         case 'SUCCESS_REGIST':
             return {
                 ...state,
