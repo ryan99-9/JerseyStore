@@ -122,9 +122,6 @@ class Cart extends React.Component {
 
         }
         this.setState({ askPas: true })
-
-
-
     }
     onOkPas = () => {
         // alert('fungsi menuju history jalan')

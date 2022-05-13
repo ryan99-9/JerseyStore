@@ -135,7 +135,7 @@ class DetailPage extends React.Component {
                                 style={{ color: "grey", border: "none" }}></i>}</p>
                         {this.props.role === "user" ? 
                         <div style={{ display: 'flex', width: '30%', textAlign: 'center' }}>
-                            <p>Quantity</p>
+                            <p>Quantity</p><br/>
                             <Button
                                 variant="dark"
                                 onClick={this.onMinus}
