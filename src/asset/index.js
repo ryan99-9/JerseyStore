@@ -1,2 +1,7 @@
 export const LOGO = require('./storeLogo.png')
 export const background = require('./mu.png')
+export const BRI = require('./BRI.png')
+export const BCA = require('./BCA.png')
+export const GOPAY = require('./GoPAY.png')
+export const LINKAJA = require('./LINK AJA.png')
+export const SHOPEE = require('./SHOPEE.png')

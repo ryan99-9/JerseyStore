@@ -1,42 +1,53 @@
+@media (max-width: 320px) {
+    .navBg {
+        display: block;
+        flex-direction: column ;
+    }
+    .logo_name{
+        flex-direction:column ;
+    }
+}
+
 .navBg{
     background-color: #e8e8e8;
-    height: 60px;
+    height: 3.75rem;
     box-sizing: border-box;
-    position: fixed;
+    /* position: fixed; */
+    display: flex;
 }
 .logo_name{
    display: flex; 
-   padding-left: 10px;
-   margin-right: 70px;
+   padding-left: 0.625rem;
+   margin-right: 4.375rem;
 }
 .logo{
-    height: 40px;
-    width: 40px;
-    margin-top: 1px;
-    margin-bottom: 1px;
-    margin-left:5px;
-    margin-right: 0px;
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-top: 0.0625rem;
+    margin-bottom: 0.0625rem;
+    margin-left: 0.3125rem;
+    margin-right: 0rem;
 }
 .nameStore{
     font-family: 'Libre Baskerville', serif;
-    height: 40px;
-    width: 40px;
-    margin-top: 1px;
-    margin-bottom: 1px;
-    margin-left:0px;
-    margin-right: 5px;
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-top: 0.0625rem;
+    margin-bottom: 0.0625rem;
+    margin-left:0rem;
+    margin-right: 2.5rem;
     color: rgba(194,39,45);
     
 }
 .search{
-    height: 25px;
-    width: 300px;
-    margin-top: 2px;
-    margin-bottom: 4px;
-    margin-right: 5px;
-    margin-left: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
+    height: 1.5625rem;
+    width: 18.75rem;
+    margin-top: 0.125rem;
+    margin-bottom: 0.25rem;
+    margin-right: 0.3125rem;
+    margin-left: 0.3125rem;
+    padding-left: 0.3125rem;
+    padding-right: 0.3125rem;
     box-sizing: border-box;
 }
 .navbarText{
@@ -44,7 +55,7 @@
 }
 
 .formControl{
-    height: 30px;
+    height: 1.875rem;
 }
 .dropdown{
     background-color: #e8e8e8;

@@ -1,15 +1,27 @@
+
 .carousel{
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-top: 50px;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    margin-top: 3.125rem;
     height: 50vh;
     width: 85vw;
     margin-left: auto;
     margin-right: auto;
 
 }
+@media (max-width: 320px) {
+    .carousel {
+        width:0vw;
+        height:0vh;
+    }
+    .imgCarousel{
+        width:0;
+        height: 0;
+    }
+}
+
 .imgCarousel{
     width: 100%;
 }
@@ -17,8 +29,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 0px;
-    padding: 50px;
+    margin-top: 0rem;
+    padding: 3.125rem;
 }
 .cardText {
 overflow: hidden;
@@ -32,13 +44,28 @@ white-space: nowrap;
     
 }
 .second_layer{
-    background-color: rgba(194,39,45) ;
+    background-color: #6e6e6e ;
 }
 .payment{
-    margin-left: 4rem;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 1.875rem;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 2.5rem;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #6b6161 ;
-
+    border-top: 1px solid black;
+}
+.setContact{
+    margin-top: 1.875rem;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    border-top: 1px solid black;
+    padding-top: 1.25rem;
+    text-align: center;
+}
+.contItemContact{
+    margin: 15px 20px;
+    padding: 20px;
+    justify-content: space-evenly;
 }

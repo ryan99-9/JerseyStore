@@ -36,7 +36,7 @@ class NavigationBar extends React.Component {
         // console.log(this.props.role)
         if (this.props.role === "admin") {
             return (
-                <Navbar fixed="top" className="navBg">
+                <Navbar fixed="top" className="navBg" >
                     <div className='logo_name'>
                         <Image src={LOGO} className="logo" />
                         <h3 class="nameStore">RedStore</h3>
@@ -70,17 +70,6 @@ class NavigationBar extends React.Component {
                                 <Dropdown.Menu>
                                     <Dropdown.Item>Profile</Dropdown.Item>
                                     <Dropdown.Item onClick={this.props.logOut}>Log Out </Dropdown.Item>
-                                    {/* {this.props.userNameShow ?
-                                        <>
-                                            <Dropdown.Item>Profile</Dropdown.Item>
-                                            <Dropdown.Item onClick={this.props.logOut}>Log Out </Dropdown.Item>
-                                        </>
-                                        :
-                                        <>
-                                            <Dropdown.Item as={Link} to="/Login">Login</Dropdown.Item>
-                                            <Dropdown.Item as={Link} to="/Register">Register</Dropdown.Item>
-                                        </>
-                                    } */}
                                 </Dropdown.Menu>
                             </Dropdown>
                         </Navbar.Collapse>
@@ -134,18 +123,6 @@ class NavigationBar extends React.Component {
                                     <Dropdown.Item>Profile</Dropdown.Item>
                                     <Dropdown.Item as={Link} to="/History" >History</Dropdown.Item>
                                     <Dropdown.Item onClick={this.props.logOut}>Log Out </Dropdown.Item>
-                                    {/* {this.props.userNameShow ?
-                                        <>
-                                            <Dropdown.Item>Profile</Dropdown.Item>
-                                            <Dropdown.Item as={Link} to="/History" >History</Dropdown.Item>
-                                            <Dropdown.Item onClick={this.props.logOut}>Log Out </Dropdown.Item>
-                                        </>
-                                        :
-                                        <>
-                                            <Dropdown.Item as={Link} to="/Login">Login</Dropdown.Item>
-                                            <Dropdown.Item as={Link} to="/Register">Register</Dropdown.Item>
-                                        </>
-                                    } */}
                                 </Dropdown.Menu>
                             </Dropdown>
                         </Navbar.Collapse>
@@ -198,19 +175,6 @@ class NavigationBar extends React.Component {
                                 <Dropdown.Menu>
                                     <Dropdown.Item as={Link} to="/Login">Login</Dropdown.Item>
                                     <Dropdown.Item as={Link} to="/Register">Register</Dropdown.Item>
-                                    {/* {this.props.userNameShow ?
-                                        <>
-                                            <Dropdown.Item>Profile</Dropdown.Item>
-                                            <Dropdown.Item as={Link} to="/History" >History</Dropdown.Item>
-                                            <Dropdown.Item onClick={this.props.logOut}>Log Out </Dropdown.Item>
-                                        </>
-                                        :
-                                        <>
-                                            <Dropdown.Item as={Link} to="/Login">Login</Dropdown.Item>
-                                            <Dropdown.Item as={Link} to="/Register">Register</Dropdown.Item>
-                                        </>
-                                    } */}
-
                                 </Dropdown.Menu>
                             </Dropdown>
                         </Navbar.Collapse>
@@ -230,3 +194,15 @@ const mapStateToProps = (take) => {
     }
 }
 export default connect(mapStateToProps, { logOut })(NavigationBar)
+
+   {/* {this.props.userNameShow ?
+                                        <>
+                                            <Dropdown.Item>Profile</Dropdown.Item>
+                                            <Dropdown.Item onClick={this.props.logOut}>Log Out </Dropdown.Item>
+                                        </>
+                                        :
+                                        <>
+                                            <Dropdown.Item as={Link} to="/Login">Login</Dropdown.Item>
+                                            <Dropdown.Item as={Link} to="/Register">Register</Dropdown.Item>
+                                        </>
+                                    } */}

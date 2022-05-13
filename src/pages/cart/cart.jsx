@@ -127,7 +127,7 @@ class Cart extends React.Component {
         // alert('fungsi menuju history jalan')
         let pas = this.refs.passwordUser.value
         if (pas !== this.props.password) {
-            this.setState({ checkpas: true })
+            return this.setState({ checkpas: true })
         }
         let data = {
             idUser: this.props.id,

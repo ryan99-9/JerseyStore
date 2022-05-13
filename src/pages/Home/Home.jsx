@@ -6,6 +6,7 @@ import { Carousel, Card, Button } from 'react-bootstrap'
 import './home.css'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import {BRI,BCA,LINKAJA,GOPAY,SHOPEE} from '../../asset'
 
 class Home extends React.Component {
     constructor(props) {
@@ -124,7 +125,7 @@ class Home extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className='w-100'>
                 <NavigationBar />
                 <div className='second_layer'>
                     <div className='carousel'>
@@ -169,34 +170,46 @@ class Home extends React.Component {
                     <div style={{ display: 'flex', marginLeft: '3rem', marginRight: '20rem', marginTop: '2rem', marginBottom: '4rem' }} >
                         <div className='mr2 mx-3'
                             style={{}}><img
-                                style={{ height: '4rem' }}
-                                src="https://1.bp.blogspot.com/-8aj5-2xrgbA/X30_86ndgPI/AAAAAAAAHPA/7LrHzutC85w5iVT_WtYYb3dmGvo5arjUwCLcBGAsYHQ/w640-h320/logo-shopee-pay.png"
+                                style={{ height: '6rem' }}
+                                src={SHOPEE}
                                 alt="payment" /></div>
                         <div style={{}} ><img
                             style={{ height: '4rem' }}
-                            src='https://1.bp.blogspot.com/-GjCpjdW8Hrs/XkXUvE0RseI/AAAAAAAABmk/u5e1zr7RGHQN2TFwPu1IoN8QJBtwXLH5QCLcBGAsYHQ/s400/Logo%2BLink%2BAja%2521.png'
+                            src={LINKAJA}
                             alt="payment" /></div>
-                        <div style={{ marginRight: '1rem' }} ><img
+                        {/* <div style={{ marginRight: '1rem' }} ><img
                             style={{ height: '4rem' }}
                             src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Logo_Indomaret.png/800px-Logo_Indomaret.png'
-                            alt="payment" /></div>
+                            alt="payment" /></div> */}
                         <div className='mr2 mx-1'
                             style={{}} ><img
-                                style={{ height: '3rem' }}
-                                src='https://www.freepnglogos.com/uploads/logo-bca-png/bank-bca-solutions-agate-26.png'
+                                style={{ height: '6rem' }}
+                                src={GOPAY}
                                 alt="payment" /></div>
                         <div className='mr1 mx-1'
                             style={{}} ><img
                                 style={{ height: '3rem', marginLeft: '2rem' }}
-                                src='https://www.freepnglogos.com/uploads/logo-bca-png/bank-bca-file-bank-bri-logo-svg-wikimedia-commons-8.png'
+                                src={BRI}
                                 alt="payment" /></div>
-                        <div style={{}} ><img
-                            style={{ height: '4rem', marginLeft: '2rem' }}
-                            src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/MasterCard_early_1990s_logo.png/800px-MasterCard_early_1990s_logo.png?20170118155024'
-                            alt="payment" /></div>
+                        <a><img
+                            style={{ height: '3rem', marginLeft: '2rem' }}
+                            src={BCA}
+                            alt="payment" /></a>
                     </div>
                 </div>
+                <div className='setContact'>
+                    <h1 id='contactus'>Contact Us</h1>
+                    <p>RedStore Official adalah akun resmi dari RedStore.</p>
+                    <p>Redstore membantu konsumen merasa mudah untuk mendapatkan jersey resmi dari brand terkenal dan juga dari official resmi klub yang bersangkutan</p>
+                    <div className='.contItemContact'>
+                        <a style={{ padding: '10px' }} href="http://wa.me/6285731040552"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a style={{ padding: '10px' }} href="https://www.linkedin.com/in/nurul-hidayati-khusnia-fatatik-212646190/" ><i class="fab fa-linkedin"></i> Linkedin</a>
+                        <a style={{ padding: '10px' }} href="http://instagram.com/conannia17?utm_source=qr"><i class="fab fa-instagram"></i> Instagram</a>
+                        <a style={{ padding: '10px' }} href="https://twitter.com/khusniafh"><i class="fab fa-twitter"></i> Twitter</a>
+                        <a style={{ padding: '10px' }} href="mailto:conannia17@gmail.com"><i class="fas fa-envelope-open-text"></i>  edoafrian90@gmail.com</a>
 
+                    </div>
+                </div>
             </div>
         )
     }
