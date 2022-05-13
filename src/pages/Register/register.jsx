@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { InputGroup, FormControl, Button,Modal } from 'react-bootstrap'
+import { InputGroup, FormControl, Button, Modal } from 'react-bootstrap'
 import { Link, Navigate } from 'react-router-dom'
 import './register.css'
 import { register } from '../../redux/action'
@@ -21,18 +21,18 @@ class Register extends React.Component {
 
     ruleOfUsername(e) {
         let inputUser = e.target.value
-        console.log(inputUser);
-        // let symb = /^[a-z0-9_.]+$/
-        if (inputUser.length > 0 && inputUser.length < 3) {
-            this.setState({ errUsername: [true, "Username must be 3 characters or more"] })
+        let symb = /[!&#$%^*]/
+        if (symb.test(inputUser) || inputUser.length > 0 && inputUser.length < 3) {
+            return this.setState({ errUsername: [true, "Username must be 3 characters or more"] })
         } this.setState({ errUsername: [false, ""] })
     }
     ruleOfEmail(e) {
         let inputEmail = e.target.value
-        // let regex = /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        let format = ["@",".com"]
-        if (inputEmail.includes(format[0],format[1]) && inputEmail.length > 0) {
-            this.setState({ errEmail: [true, "Emai isn't valid, please type correctly"] })
+        console.log(inputEmail);
+        let regex = /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        console.log(!regex.test(inputEmail));
+        if (!regex.test(inputEmail)) {
+            return this.setState({ errEmail: [true, "Emai isn't valid, please type correctly"] })
         }
         this.setState({ errEmail: [false, ""] })
     }
@@ -49,7 +49,7 @@ class Register extends React.Component {
         let username = this.refs.username.value
         console.log(username)
         let password = this.refs.password.value
-        let confpass = this.refs.confpass.value
+        let confpass = this.refs.confPass.value
         let email = this.refs.email.value
 
         let addingData = {
@@ -77,7 +77,6 @@ class Register extends React.Component {
         if (this.props.errorRegister) {
             this.setState({ errRegist: [true, "Data has been exist"] })
         }
-
     }
 
     render() {
@@ -102,6 +101,7 @@ class Register extends React.Component {
                     </InputGroup>
                     <p style={{ color: "red" }}>
                         {this.state.errUsername[1]}
+                        {console.log(this.state.errUsername[1])}
                     </p>
                     <label className='textLabel'>E-mail</label>
                     <InputGroup className="mb-3">
@@ -109,7 +109,7 @@ class Register extends React.Component {
                         <FormControl
                             placeholder="example@exam.com"
                             ref="email"
-                            type="text"
+                            // type="text"
                             onChange={(e) => this.ruleOfEmail(e)}
                         />
                     </InputGroup>
@@ -145,13 +145,16 @@ class Register extends React.Component {
                     </InputGroup>
                     <div className='register'>
                         <Button className='registerButton' onClick={this.onRegister}
-                        >Register</Button>
+                        >Register</Button> 
                     </div>
+                    <h6 style={{color:'red',textAlign:'center'}}>{this.state.errRegist[1]}</h6>
                     <p className='textHaveAccount'>Have an account
                         <Link to="/Login" className='linkLogin'>Login in
                         </Link></p>
                 </div>
-                <Modal.Dialog show={this.state.errRegist[0]}>
+                
+                
+                {/* <Modal.Dialog show={this.state.errRegist[0]}>
                     <Modal.Header closeButton>
                         <Modal.Title>Error Register</Modal.Title>
                     </Modal.Header>
@@ -159,10 +162,10 @@ class Register extends React.Component {
                         <p>{this.state.errRegist[1]}</p>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary">Close</Button>
+                        <Button  onClick={this.setState({errRegist:[false,""]})} variant="secondary">Close</Button>
                         <Button variant="primary">Save changes</Button>
                     </Modal.Footer>
-                </Modal.Dialog>
+                </Modal.Dialog> */}
             </div>
         )
     }

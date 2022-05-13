@@ -81,6 +81,7 @@ export const register = (username, email, addingData) => {
                         // post data user baru
                         Axios.post('http://localhost:2000/users', addingData)
                             .then(res => {
+                                console.log(res.data);
                                 return dispatch({
                                     type: 'SUCCESS_REGIST'
                                 })

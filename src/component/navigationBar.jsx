@@ -16,13 +16,21 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { logOut } from '../redux/action/userAction'
 import './Navbar.css'
+import Axios from 'axios'
 
 class NavigationBar extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             seacrh: false,
+            prodWithWish:[],
         }
+    }
+    componentDidMount() {
+        Axios.get(`http://localhost:2000/products?wishlist=true`)
+            .then(res => {
+                this.setState({ prodWithWish: res.data })
+            })
     }
     render() {
         // console.log(this.props.role)
@@ -108,11 +116,11 @@ class NavigationBar extends React.Component {
                             <Button variant="outline-secondary"
                                 as={Link} to="/Wishlist"
                                 style={{ border: 'none' }}
-                            >Wishlist</Button>
+                            >Wishlist <Badge bg="outline-light" text="dark">{this.state.prodWithWish.length}</Badge></Button>
                             <Button variant="outline-secondary"
                                 as={Link} to="/Cart"
                                 style={{ border: 'none' }}>
-                                Cart <Badge bg="secondary">{this.props.cart.length}</Badge>
+                                Cart <Badge bg="outline-light" text="dark">{this.props.cart.length}</Badge>
                                 <span className="visually-hidden">unread messages</span>
                             </Button>
                             <Dropdown >

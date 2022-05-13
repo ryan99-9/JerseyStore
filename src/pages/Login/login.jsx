@@ -64,7 +64,7 @@ class LoginPage extends React.Component {
                     </InputGroup>
                     <Button onClick={this.onLogin} className='loginButton'>Login in</Button>
                     <p className='textHaveAccount'>Do you have an account?
-                        <Link to="/Register" className='textRegister'>Register
+                        <Link to="/Register" className='textRegister'> Register
                         </Link></p>
                     <Modal show={this.state.error}>
                         <Modal.Header>

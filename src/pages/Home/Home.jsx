@@ -38,16 +38,26 @@ class Home extends React.Component {
                         console.log(res.data)
                     })
             })
+        this.setState({ wishlist: !this.state.wishlist })
+        if (this.state.wishlist) {
+            Axios.patch(`http://localhost:2000/products/${id}`, { wishlist: false })
+                .then(res => {
+                    Axios.get('http://localhost:2000/products')
+                        .then(res => {
+                            this.setState({ products: res.data })
+                        })
+                })
+        }
     }
-    unWishlist = (id) => {
-        Axios.patch(`http://localhost:2000/products/${id}`, { wishlist: false })
-            .then(res => {
-                Axios.get('http://localhost:2000/products')
-                    .then(res => {
-                        this.setState({ products: res.data })
-                    })
-            })
-    }
+    // unWishlist = (id) => {
+    //     Axios.patch(`http://localhost:2000/products/${id}`, { wishlist: false })
+    //         .then(res => {
+    //             Axios.get('http://localhost:2000/products')
+    //                 .then(res => {
+    //                     this.setState({ products: res.data })
+    //                 })
+    //         })
+    // }
     onNextPage = () => {
         this.setState({ page: this.state.page + 1 })
 
@@ -76,7 +86,7 @@ class Home extends React.Component {
                                 Stock {item.stock}
                             </Card.Text>
                             <div className='cardButton'>
-                                <Button
+                                {/* <Button
                                     variant="light"
                                     onClick={() => this.unWishlist(item.id)}
                                     style={{ backgroundColor: 'white', border: 'none', color: 'black', marginRight: '3px' }}>
@@ -85,8 +95,7 @@ class Home extends React.Component {
                                         :
                                         <i class="fad fa-trash-undo-alt"></i>
                                     }
-                                </Button>
-
+                                </Button> */}
                                 <Button
                                     variant="light"
                                     onClick={() => this.wishlist(item.id)}
@@ -138,10 +147,10 @@ class Home extends React.Component {
                     </Carousel>
 
                 </div>
-                <div style={{ marginTop: '14rem', padding: '1rem',marginLeft:'4rem' }}>
+                <div style={{ marginTop: '14rem', padding: '1rem', marginLeft: '4rem' }}>
                     <h2>Special Product</h2>
                 </div>
-                <div style={{ display: 'flex', marginTop: '1rem', width: '13rem', justifyContent: 'space-between', alignItems: 'center',marginLeft:'4rem' }}>
+                <div style={{ display: 'flex', marginTop: '1rem', width: '13rem', justifyContent: 'space-between', alignItems: 'center', marginLeft: '4rem' }}>
                     <Button
                         disabled={this.state.page <= 1 ? true : false}
                         onClick={this.onPrevPage}
@@ -156,7 +165,7 @@ class Home extends React.Component {
                     {this.onShowProduct()}
                 </div>
                 <div className='payment'>Payment</div>
-                <div style={{ display: 'flex', marginLeft: '3rem', marginRight: '20rem', marginTop: '2rem', marginBottom:'4rem' }} >
+                <div style={{ display: 'flex', marginLeft: '3rem', marginRight: '20rem', marginTop: '2rem', marginBottom: '4rem' }} >
                     <div className='mr2 mx-3'
                         style={{}}><img
                             style={{ height: '4rem' }}
