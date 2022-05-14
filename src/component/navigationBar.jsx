@@ -23,7 +23,8 @@ class NavigationBar extends React.Component {
         super(props)
         this.state = {
             seacrh: false,
-            prodWithWish:[],
+            prodWithWish: [],
+            products: [],
         }
     }
     componentDidMount() {
@@ -31,6 +32,25 @@ class NavigationBar extends React.Component {
             .then(res => {
                 this.setState({ prodWithWish: res.data })
             })
+        Axios.get('http://localhost:2000/products')
+            .then(res => {
+                this.setState({ products: res.data })
+                console.log(res.data);
+            })
+        // this.onFilter()
+    }
+    onFilter = () => {
+        let inputFilter = this.refs.filter.value
+        // let allProduct = this.state.products.map(item=>{
+        //     return (
+        //         item.name
+        //         )
+        // })
+        // console.log(allProduct);
+        // const res = this.state.products[0].name.filter(inputFilter)
+        // console.log(res);
+
+
     }
     render() {
         // console.log(this.props.role)
@@ -41,15 +61,17 @@ class NavigationBar extends React.Component {
                         <Image src={LOGO} className="logo" />
                         <h3 class="nameStore">RedStore</h3>
                     </div>
-                    <Container>
+                    <Container className='cont'>
                         <div className="search">
                             <InputGroup className="mb-3">
                                 <FormControl className="formControl"
                                     placeholder="Manchester United"
+                                    ref="filter"
                                 />
-                                <InputGroup.Text id="basic-addon1" className="formControl" onClick={() => this.setState({ search: true })} >
+                                {/* <InputGroup.Text id="basic-addon1" className="formControl" onClick={() => this.setState({ search: true })} >
                                     {this.state.search ? "cari" : "find"}
-                                </InputGroup.Text>
+                                </InputGroup.Text> */}
+                                <Button onClick={this.onFilter}>filter</Button>
                             </InputGroup>
                         </div>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -83,15 +105,16 @@ class NavigationBar extends React.Component {
                         <Image src={LOGO} className="logo" />
                         <h3 class="nameStore">RedStore</h3>
                     </div>
-                    <Container>
+                    <Container className='cont'>
                         <div className="search">
                             <InputGroup className="mb-3">
                                 <FormControl className="formControl"
                                     placeholder="Manchester United"
                                 />
-                                <InputGroup.Text id="basic-addon1" className="formControl" onClick={() => this.setState({ search: true })} >
-                                    {this.state.search ? "cari" : "find"}
-                                </InputGroup.Text>
+                                {/* <InputGroup.Text id="basic-addon1" className="formControl" onClick={this.onFilter} >
+                                    find
+                                </InputGroup.Text> */}
+                                <Button onClick={this.onFilter}>Filter</Button>
                             </InputGroup>
                         </div>
 
@@ -116,7 +139,7 @@ class NavigationBar extends React.Component {
                                 <Dropdown.Toggle style={{ backgroundColor: '#e8e8e8', border: 'none', color: 'black' }}
                                     id="dropdown-basic"
                                 >
-                                   Hello {this.props.userNameShow}
+                                    Hello {this.props.userNameShow}
                                     {/* {this.props.userNameShow ? `Hello ${this.props.userNameShow}` : "Username"} */}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
@@ -169,7 +192,7 @@ class NavigationBar extends React.Component {
                                 <Dropdown.Toggle style={{ backgroundColor: '#e8e8e8', border: 'none', color: 'black' }}
                                     id="dropdown-basic"
                                 >
-                                   Username
+                                    Username
                                     {/* {this.props.userNameShow ? `Hello ${this.props.userNameShow}` : "Username"} */}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
@@ -195,7 +218,7 @@ const mapStateToProps = (take) => {
 }
 export default connect(mapStateToProps, { logOut })(NavigationBar)
 
-   {/* {this.props.userNameShow ?
+{/* {this.props.userNameShow ?
                                         <>
                                             <Dropdown.Item>Profile</Dropdown.Item>
                                             <Dropdown.Item onClick={this.props.logOut}>Log Out </Dropdown.Item>

@@ -1,36 +1,97 @@
-
+@media (max-width: 320px) {
+    .mainLayer{
+        margin-right: -3rem;
+    } 
+     .carousel {
+        width:100vw;
+        height:25vh;
+    }
+    /* .car{
+        width: 100vw;
+        height: 25vh;
+    } */
+    .imgCarousel{
+        width:100vw;
+        height: 25vh;
+        margin-top: 5rem;
+    } 
+     /* .carItem{
+        width: 100vw;
+        height: 50vh;
+    } */
+    .imagePayment{
+        display:flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        /* align-content: center; */
+        align-items: center;
+        padding-bottom: 1rem;
+    }
+}
+@media (max-width: 768px) {
+    .bca{
+        height: 1.5rem; 
+        margin-left: 1rem;
+        margin-top: 1.6rem;
+        margin-right: 2rem;
+    }
+    .mainLayer{
+        margin-right: -2rem;
+    }
+}
+.mainLayer{
+    background-color: aqua;
+    padding-top: 2rem;
+}
+/* .second_layer{
+    background-color: blueviolet;
+} */
 .carousel{
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
-    margin-top: 3.125rem;
+    margin-top: 3.5rem;
     height: 50vh;
     width: 85vw;
     margin-left: auto;
     margin-right: auto;
-
+    background-color: chartreuse;
 }
-@media (max-width: 320px) {
-    .carousel {
-        width:0vw;
-        height:0vh;
-    }
-    .imgCarousel{
-        width:0;
-        height: 0;
-    }
+.car{
+    background-color: darkolivegreen;
+    margin-top: -1.3rem;
+    margin-left: -1.3rem;
 }
-
 .imgCarousel{
-    width: 100%;
+    width: 100vw;
 }
+.carItem{
+    background-color: magenta;
+}
+.titleLayer{
+    background-color: firebrick;
+    margin-top: 14rem;
+    padding: 1rem; 
+    margin-left: 4rem;
+}
+.pagination{
+    display: flex;
+    margin-top: 1rem; 
+    width: 13rem; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-left: 4rem;
+    background-color: midnightblue;
+}
+
 .product{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 0rem;
     padding: 3.125rem;
+    background-color: gold;
 }
 .cardText {
 overflow: hidden;
@@ -41,21 +102,45 @@ white-space: nowrap;
     display: flex;
     justify-content: right;
     box-sizing: border-box;
+    margin-top: 1rem;
     
 }
-.second_layer{
-    background-color: #6e6e6e ;
+.thirdLayer{
+    background-color: rgb(240, 238, 238);
+    background-image:url();
+    background-size:auto;
+    background-color: peru;
+}
+.paymentLayer{
+    background-color: khaki;
+    display: flex;
+    flex-direction: column;
 }
 .payment{
-    margin-left: 5vw;
-    margin-right: 5vw;
+    /* margin-left: 5vw;
+    margin-right: 5vw; */
     margin-top: 1.875rem;
     font-weight: bold;
     font-size: 2.5rem;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #6b6161 ;
     border-top: 1px solid black;
+    background-color: hotpink;
+    text-align: center;
 }
+.imagePayment{
+     display: flex;
+     /* flex-direction: row;  */
+     /* margin-left: 3rem; 
+     margin-right: 20rem; */
+    margin-top: 2rem; 
+    margin-bottom: 4rem;
+    background-color: mediumspringgreen;
+    justify-content: center;
+}
+/* .img{
+    display: flex;
+} */
 .setContact{
     margin-top: 1.875rem;
     margin-left: 5vw;
@@ -63,9 +148,15 @@ white-space: nowrap;
     border-top: 1px solid black;
     padding-top: 1.25rem;
     text-align: center;
+    background-color: lightskyblue;
 }
 .contItemContact{
     margin: 15px 20px;
     padding: 20px;
     justify-content: space-evenly;
+}
+.bca{
+    height: 2.5rem; 
+    margin-left: 1rem;
+    margin-top: 1.6rem;
 }

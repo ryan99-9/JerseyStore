@@ -6,7 +6,7 @@ import { Carousel, Card, Button } from 'react-bootstrap'
 import './home.css'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import {BRI,BCA,LINKAJA,GOPAY,SHOPEE} from '../../asset'
+import { BRI, BCA, LINKAJA, GOPAY, SHOPEE } from '../../asset'
 
 class Home extends React.Component {
     constructor(props) {
@@ -87,23 +87,13 @@ class Home extends React.Component {
                                 Stock {item.stock}
                             </Card.Text>
                             <div className='cardButton'>
-                                {/* <Button
-                                    variant="light"
-                                    onClick={() => this.unWishlist(item.id)}
-                                    style={{ backgroundColor: 'white', border: 'none', color: 'black', marginRight: '3px' }}>
-                                    {item.wishlist ?
-                                        <i class="far fa-trash-undo"></i>
-                                        :
-                                        <i class="fad fa-trash-undo-alt"></i>
-                                    }
-                                </Button> */}
                                 <Button
                                     variant="light"
                                     onClick={() => this.wishlist(item.id)}
                                     // as={Link} to={`/?${item.id}`}
                                     style={{ backgroundColor: 'white', border: 'none', color: 'black', marginRight: '3px' }}
                                 >{item.wishlist ?
-                                    <i class="fas fa-heart"></i>
+                                    <i class="fas fa-heart" style={{ color: 'red' }}></i>
                                     :
                                     <i class="far fa-heart"></i>
                                     }
@@ -119,97 +109,91 @@ class Home extends React.Component {
                     </Card>
                 )
             })
-
         )
-
     }
     render() {
         return (
-            <div className='w-100'>
+            <div className='mainLayer w-100'>
                 <NavigationBar />
-                <div className='second_layer'>
-                    <div className='carousel'>
-                        <Carousel>
-                            {this.state.carousels.map(item => {
-                                return (
-                                    <Carousel.Item interval={1000}>
-                                        <img
-                                            className="d-block imgCarousel"
-                                            src={item.image}
-                                            alt="First slide"
-                                        />
-                                        {/* <Carousel.Caption className='captionCar'>
-                                        <h3>First slide label</h3>
-                                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                    </Carousel.Caption> */}
-                                    </Carousel.Item>
-                                )
-                            })}
-                        </Carousel>
-                    </div>
-                    <div style={{ marginTop: '14rem', padding: '1rem', marginLeft: '4rem' }}>
-                        <h2>Special Product</h2>
-                    </div>
-                    <div style={{ display: 'flex', marginTop: '1rem', width: '13rem', justifyContent: 'space-between', alignItems: 'center', marginLeft: '4rem' }}>
-                        <Button
-                            disabled={this.state.page <= 1 ? true : false}
-                            onClick={this.onPrevPage}
-                            variant="light"><i class="fad fa-angle-double-left"></i></Button>
-                        <p style={{ marginBottom: '0px' }}>page {this.state.page} of {this.state.max}</p>
-                        <Button
-                            disabled={this.state.page >= this.state.max ? true : false}
-                            onClick={this.onNextPage}
-                            variant="light"><i class="fad fa-angle-double-right"></i></Button>
-                    </div>
-                    <div className='product'>
-                        {this.onShowProduct()}
-                    </div>
+                {/* <div className='second_layer'> */}
+                <div className='carousel'>
+                    <Carousel className='car'>
+                        {this.state.carousels.map(item => {
+                            return (
+                                <Carousel.Item interval={1000} className='carItem'>
+                                    <img
+                                        className="d-block imgCarousel"
+                                        src={item.image}
+                                        alt="First slide"
+                                    />
+                                </Carousel.Item>
+                            )
+                        })}
+                    </Carousel>
                 </div>
-                <div>
-                    <div className='payment'>Payment</div>
-                    <div style={{ display: 'flex', marginLeft: '3rem', marginRight: '20rem', marginTop: '2rem', marginBottom: '4rem' }} >
-                        <div className='mr2 mx-3'
-                            style={{}}><img
-                                style={{ height: '6rem' }}
-                                src={SHOPEE}
-                                alt="payment" /></div>
-                        <div style={{}} ><img
-                            style={{ height: '4rem' }}
-                            src={LINKAJA}
-                            alt="payment" /></div>
-                        {/* <div style={{ marginRight: '1rem' }} ><img
-                            style={{ height: '4rem' }}
-                            src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Logo_Indomaret.png/800px-Logo_Indomaret.png'
-                            alt="payment" /></div> */}
-                        <div className='mr2 mx-1'
-                            style={{}} ><img
-                                style={{ height: '6rem' }}
-                                src={GOPAY}
-                                alt="payment" /></div>
-                        <div className='mr1 mx-1'
-                            style={{}} ><img
-                                style={{ height: '3rem', marginLeft: '2rem' }}
-                                src={BRI}
-                                alt="payment" /></div>
-                        <a><img
-                            style={{ height: '3rem', marginLeft: '2rem' }}
-                            src={BCA}
-                            alt="payment" /></a>
-                    </div>
+                <div className='titleLayer' >
+                    <h2>Special Product</h2>
                 </div>
-                <div className='setContact'>
-                    <h1 id='contactus'>Contact Us</h1>
-                    <p>RedStore Official adalah akun resmi dari RedStore.</p>
-                    <p>Redstore membantu konsumen merasa mudah untuk mendapatkan jersey resmi dari brand terkenal dan juga dari official resmi klub yang bersangkutan</p>
-                    <div className='.contItemContact'>
-                        <a style={{ padding: '10px' }} href="http://wa.me/6285731040552"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                        <a style={{ padding: '10px' }} href="https://www.linkedin.com/in/nurul-hidayati-khusnia-fatatik-212646190/" ><i class="fab fa-linkedin"></i> Linkedin</a>
-                        <a style={{ padding: '10px' }} href="http://instagram.com/conannia17?utm_source=qr"><i class="fab fa-instagram"></i> Instagram</a>
-                        <a style={{ padding: '10px' }} href="https://twitter.com/khusniafh"><i class="fab fa-twitter"></i> Twitter</a>
-                        <a style={{ padding: '10px' }} href="mailto:conannia17@gmail.com"><i class="fas fa-envelope-open-text"></i>  edoafrian90@gmail.com</a>
+                <div className='pagination'>
+                    <Button
+                        disabled={this.state.page <= 1 ? true : false}
+                        onClick={this.onPrevPage}
+                        variant="light"><i class="fad fa-angle-double-left"></i></Button>
+                    <p style={{ marginBottom: '0px' }}>page {this.state.page} of {this.state.max}</p>
+                    <Button
+                        disabled={this.state.page >= this.state.max ? true : false}
+                        onClick={this.onNextPage}
+                        variant="light"><i class="fad fa-angle-double-right"></i></Button>
+                </div>
+                <div className='product'>
+                    {this.onShowProduct()}
+                </div>
+                {/* </div> */}
+                <div className='thirdLayer'>
+                    <div className='paymentLayer'>
+                        <div className='payment'>Payment</div>
+                        <div className='imagePayment' >
+                            <a className='mr2 mx-3'
+                            ><img
+                                    // className='shopee'
+                                    style={{height:'6rem'}}
+                                    src={SHOPEE}
+                                    alt="payment" /></a>
+                            <a ><img
+                                style={{ height: '4rem', marginTop: '1rem' }}
+                                src={LINKAJA}
+                                alt="payment" /></a>
+                            <a className='mr2 mx-1'
+                                style={{}} ><img
+                                    style={{ height: '6rem', marginTop: '0.2rem', marginLeft: '0.5rem' }}
+                                    src={GOPAY}
+                                    alt="payment" /></a>
+                            <a className='mr1 mx-1'
+                                style={{}} ><img
+                                    style={{ height: '2.5rem', marginLeft: '0.5rem', marginTop: '1.8rem' }}
+                                    src={BRI}
+                                    alt="payment" /></a>
+                            <a><img
+                                className='bca'
+                                src={BCA}
+                                alt="payment" /></a>
+                        </div>
+                    </div>
+                    <div className='setContact'>
+                        <h1 id='contactus'>Contact Us</h1>
+                        <p>RedStore Official adalah akun resmi dari RedStore.</p>
+                        <p>Redstore membantu konsumen merasa mudah untuk mendapatkan jersey resmi dari brand terkenal dan juga dari official resmi klub yang bersangkutan</p>
+                        <div className='.contItemContact'>
+                            <a style={{ padding: '10px' }} href="http://wa.me/6285731040552"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                            <a style={{ padding: '10px' }} href="https://www.linkedin.com/in/nurul-hidayati-khusnia-fatatik-212646190/" ><i class="fab fa-linkedin"></i> Linkedin</a>
+                            <a style={{ padding: '10px' }} href="http://instagram.com/conannia17?utm_source=qr"><i class="fab fa-instagram"></i> Instagram</a>
+                            <a style={{ padding: '10px' }} href="https://twitter.com/khusniafh"><i class="fab fa-twitter"></i> Twitter</a>
+                            <a style={{ padding: '10px' }} href="mailto:conannia17@gmail.com"><i class="fas fa-envelope-open-text"></i>  edoafrian90@gmail.com</a>
 
+                        </div>
                     </div>
                 </div>
+
             </div>
         )
     }

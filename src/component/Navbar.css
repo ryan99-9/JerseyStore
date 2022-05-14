@@ -1,19 +1,22 @@
 @media (max-width: 320px) {
     .navBg {
-        display: block;
+        display: flex;
         flex-direction: column ;
     }
-    .logo_name{
+    .logo_name .cont{
         flex-direction:column ;
     }
 }
-
 .navBg{
     background-color: #e8e8e8;
     height: 3.75rem;
     box-sizing: border-box;
     /* position: fixed; */
     display: flex;
+}
+.cont{
+    display: flex;
+    background-color:blueviolet;
 }
 .logo_name{
    display: flex; 
@@ -27,6 +30,7 @@
     margin-bottom: 0.0625rem;
     margin-left: 0.3125rem;
     margin-right: 0rem;
+    display: flex
 }
 .nameStore{
     font-family: 'Libre Baskerville', serif;
@@ -37,6 +41,7 @@
     margin-left:0rem;
     margin-right: 2.5rem;
     color: rgba(194,39,45);
+    display: flex
     
 }
 .search{
@@ -49,15 +54,19 @@
     padding-left: 0.3125rem;
     padding-right: 0.3125rem;
     box-sizing: border-box;
+    display: flex
 }
 .navbarText{
     color: black;
+    display: flex
 }
 
 .formControl{
     height: 1.875rem;
+    display: flex
 }
 .dropdown{
     background-color: #e8e8e8;
     border: none;
+    display: flex
 }
