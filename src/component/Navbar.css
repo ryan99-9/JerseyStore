@@ -16,7 +16,7 @@
 }
 .cont{
     display: flex;
-    background-color:blueviolet;
+    /* background-color:blueviolet; */
 }
 .logo_name{
    display: flex; 

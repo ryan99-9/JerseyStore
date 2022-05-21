@@ -17,6 +17,7 @@ import { connect } from 'react-redux'
 import { logOut } from '../redux/action/userAction'
 import './Navbar.css'
 import Axios from 'axios'
+const API = 'https://database-jersey.herokuapp.com/'
 
 class NavigationBar extends React.Component {
     constructor(props) {
@@ -28,11 +29,11 @@ class NavigationBar extends React.Component {
         }
     }
     componentDidMount() {
-        Axios.get(`http://localhost:2000/products?wishlist=true`)
+        Axios.get(`${API}products?wishlist=true`)
             .then(res => {
                 this.setState({ prodWithWish: res.data })
             })
-        Axios.get('http://localhost:2000/products')
+        Axios.get(`${API}products`)
             .then(res => {
                 this.setState({ products: res.data })
                 console.log(res.data);
@@ -68,10 +69,10 @@ class NavigationBar extends React.Component {
                                     placeholder="Manchester United"
                                     ref="filter"
                                 />
-                                {/* <InputGroup.Text id="basic-addon1" className="formControl" onClick={() => this.setState({ search: true })} >
+                                <InputGroup.Text id="basic-addon1" className="formControl" onClick={() => this.setState({ search: true })} >
                                     {this.state.search ? "cari" : "find"}
-                                </InputGroup.Text> */}
-                                <Button onClick={this.onFilter}>filter</Button>
+                                </InputGroup.Text>
+                                {/* <Button style={{width:'20vw'}} onClick={this.onFilter}>filter</Button> */}
                             </InputGroup>
                         </div>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -111,10 +112,10 @@ class NavigationBar extends React.Component {
                                 <FormControl className="formControl"
                                     placeholder="Manchester United"
                                 />
-                                {/* <InputGroup.Text id="basic-addon1" className="formControl" onClick={this.onFilter} >
+                                <InputGroup.Text id="basic-addon1" className="formControl" onClick={this.onFilter} >
                                     find
-                                </InputGroup.Text> */}
-                                <Button onClick={this.onFilter}>Filter</Button>
+                                </InputGroup.Text>
+                                {/* <Button onClick={this.onFilter}>Filter</Button> */}
                             </InputGroup>
                         </div>
 

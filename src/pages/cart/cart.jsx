@@ -222,7 +222,7 @@ export default connect(mapStateToProps, { saveCart, delCart, checkout })(Cart)
 // componentDidMount() {
     //     let id = this.props.userId
     //     console.log(this.props.userId)
-    //     Axios.get(`http://localhost:2000/users/${id}`)
+    //     Axios.get(`${API}users/${id}`)
     //         .then(res => {
     //             console.log(res.data)
     //             console.log(res.data.cart)

@@ -1,8 +1,8 @@
 import Axios from 'axios'
-
+const API = 'https://database-jersey.herokuapp.com/'
 export const cart = (id, data) => {
     return (dispatch) => {
-        Axios.get(`http://localhost:2000/users/${id}`)
+        Axios.get(`${API}users/${id}`)
             .then(res => {
                 let tempCart = res.data.cart
                 console.log(res.data.cart)
@@ -23,9 +23,9 @@ export const cart = (id, data) => {
                     tempCart.push(data)
                 }
 
-                Axios.patch(`http://localhost:2000/users/${id}`, { cart: tempCart })
+                Axios.patch(`${API}users/${id}`, { cart: tempCart })
                     .then(res => {
-                        Axios.get(`http://localhost:2000/users/${id}`)
+                        Axios.get(`${API}users/${id}`)
                             .then(res => {
                                 console.log(res.data)
                                 return dispatch({
@@ -41,7 +41,7 @@ export const cart = (id, data) => {
 
 export const saveCart = (idUser, idProdCart, qtyUpdate) => {
     return (dispatch) => {
-        Axios.get(`http://localhost:2000/users/${idUser}`)
+        Axios.get(`${API}users/${idUser}`)
             .then(res => {
                 // tempCart untuk menampung data cart yg sekarang
                 let tempCart = res.data.cart
@@ -56,11 +56,11 @@ export const saveCart = (idUser, idProdCart, qtyUpdate) => {
                 tempCart.splice(idProdCart, 1, tempProd)
 
                 // kita patch data cart di user dengan yang terbaru
-                Axios.patch(`http://localhost:2000/users/${idUser}`, { cart: tempCart })
+                Axios.patch(`${API}users/${idUser}`, { cart: tempCart })
                     .then(res => {
                         // karena data base sudah terupdate maka kita perlu menyesuaikan data update di database
                         // dengan yang ada di redux
-                        Axios.get(`http://localhost:2000/users/${idUser}`)
+                        Axios.get(`${API}users/${idUser}`)
                             .then(res => {
                                 return dispatch({
                                     type: 'LOGIN',
@@ -74,14 +74,14 @@ export const saveCart = (idUser, idProdCart, qtyUpdate) => {
 
 export const delCart = (idUser, idProdCart) => {
     return (dispatch) => {
-        Axios.get(`http://localhost:2000/users/${idUser}`)
+        Axios.get(`${API}users/${idUser}`)
             .then(res => {
                 let tempCart = res.data.cart
                 tempCart.splice(idProdCart, 1)
 
-                Axios.patch(`http://localhost:2000/users/${idUser}`, { cart: tempCart })
+                Axios.patch(`${API}users/${idUser}`, { cart: tempCart })
                     .then(res => {
-                        Axios.get(`http://localhost:2000/users/${idUser}`)
+                        Axios.get(`${API}users/${idUser}`)
                             .then(res => {
                                 return dispatch({
                                     type: 'LOGIN',
@@ -95,11 +95,11 @@ export const delCart = (idUser, idProdCart) => {
 
 export const checkout = (idUser, dataTrans) => {
     return (dispatch) => {
-        // Axios.patch(`http://localhost:2000/users/${idUser}`, { cart: [] })
+        // Axios.patch(`${API}users/${idUser}`, { cart: [] })
         //     .then(res => {
-        //         Axios.post('http://localhost:2000/history', dataTrans)
+        //         Axios.post('${API}history', dataTrans)
         //             .then(res => {
-        //                 Axios.get(`http://localhost:2000/users/${idUser}`)
+        //                 Axios.get(`${API}users/${idUser}`)
         //                     .then(res => {
         //                         return dispatch({
         //                             type: 'LOGIN',
@@ -110,10 +110,10 @@ export const checkout = (idUser, dataTrans) => {
         //     })
 
         // untuk mencatat data history ke dalam database
-        Axios.post('http://localhost:2000/history', dataTrans)
+        Axios.post(`${API}history`, dataTrans)
             .then(res => {
                 let idUser = localStorage.getItem('idUser')
-                Axios.get(`http://localhost:2000/history?idUser=${idUser}`)
+                Axios.get(`${API}history?idUser=${idUser}`)
                     .then(res => {
                         return dispatch({
                             type: 'GET_HISTORY',
@@ -123,10 +123,10 @@ export const checkout = (idUser, dataTrans) => {
             })
             .then(res => {
                 // untuk mengosongkan cart user
-                Axios.patch(`http://localhost:2000/users/${idUser}`, { cart: [] })
+                Axios.patch(`${API}users/${idUser}`, { cart: [] })
                     .then(res => {
                         // untuk update data di redux
-                        Axios.get(`http://localhost:2000/users/${idUser}`)
+                        Axios.get(`${API}users/${idUser}`)
                             .then(res => {
                                 return dispatch({
                                     type: 'LOGIN',
@@ -142,7 +142,7 @@ export const getHistory = () => {
     return (dispatch) => {
         let idUser = localStorage.getItem('idUser')
         // console.log(idUser)
-        Axios.get(`http://localhost:2000/history?idUser=${idUser}`)
+        Axios.get(`${API}history?idUser=${idUser}`)
             .then(res => {
                 console.log(res.data)
                 console.log(typeof res.data);

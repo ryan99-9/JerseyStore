@@ -6,7 +6,7 @@ import NavigationBar from '../../component/navigationBar'
 import { connect } from 'react-redux'
 import { cart } from '../../redux/action'
 import { Navigate } from 'react-router-dom'
-
+const API = 'https://database-jersey.herokuapp.com/'
 
 class DetailPage extends React.Component {
     constructor(props) {
@@ -25,7 +25,7 @@ class DetailPage extends React.Component {
         // console.log(document.location.href);
         let idUrl = document.location.href.substring(29, 31)
         // console.log(idUrl)
-        Axios.get(`http://localhost:2000/products/${idUrl}`)
+        Axios.get(`${API}products/${idUrl}`)
             .then(res => {
                 // console.log(res.data)
                 this.setState({ product: res.data })

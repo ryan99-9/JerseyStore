@@ -7,6 +7,7 @@ import './home.css'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { BRI, BCA, LINKAJA, GOPAY, SHOPEE } from '../../asset'
+const API = 'https://database-jersey.herokuapp.com/'
 
 class Home extends React.Component {
     constructor(props) {
@@ -21,19 +22,19 @@ class Home extends React.Component {
         }
     }
     componentDidMount() {
-        Axios.get('http://localhost:2000/slider')
+        Axios.get(`${API}slider`)
             .then(res => {
                 this.setState({ carousels: res.data })
             })
-        Axios.get('http://localhost:2000/products')
+        Axios.get(`${API}products`)
             .then(res => {
                 this.setState({ products: res.data, max: Math.ceil(res.data.length / this.state.prodPerPage) })
             })
     }
     wishlist = (id) => {
-        Axios.patch(`http://localhost:2000/products/${id}`, { wishlist: true })
+        Axios.patch(`${API}products/${id}`, { wishlist: true })
             .then(res => {
-                Axios.get('http://localhost:2000/products')
+                Axios.get(`${API}products`)
                     .then(res => {
                         this.setState({ products: res.data })
                         console.log(res.data)
@@ -41,9 +42,9 @@ class Home extends React.Component {
             })
         this.setState({ wishlist: !this.state.wishlist })
         if (this.state.wishlist) {
-            Axios.patch(`http://localhost:2000/products/${id}`, { wishlist: false })
+            Axios.patch(`${API}products/${id}`, { wishlist: false })
                 .then(res => {
-                    Axios.get('http://localhost:2000/products')
+                    Axios.get(`${API}products`)
                         .then(res => {
                             this.setState({ products: res.data })
                         })
@@ -51,9 +52,9 @@ class Home extends React.Component {
         }
     }
     // unWishlist = (id) => {
-    //     Axios.patch(`http://localhost:2000/products/${id}`, { wishlist: false })
+    //     Axios.patch(`${API}products/${id}` { wishlist: false })
     //         .then(res => {
-    //             Axios.get('http://localhost:2000/products')
+    //             Axios.get('${API}products')
     //                 .then(res => {
     //                     this.setState({ products: res.data })
     //                 })

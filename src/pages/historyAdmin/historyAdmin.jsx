@@ -2,6 +2,7 @@ import React from 'react'
 import Axios from 'axios'
 import NavigationBar from '../../component/navigationBar'
 import {Accordion} from 'react-bootstrap'
+const API = 'https://database-jersey.herokuapp.com/'
 
 class HistoryAdmin extends React.Component {
     constructor(props) {
@@ -12,7 +13,7 @@ class HistoryAdmin extends React.Component {
     }
 
     componentDidMount() {
-        Axios.get(`http://localhost:2000/history`)
+        Axios.get(`${API}history`)
             .then(res => {
                 this.setState({ allHistory: res.data })
             })

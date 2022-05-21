@@ -1,5 +1,6 @@
 import React from 'react'
 import Axios from 'axios'
+const API = 'https://database-jersey.herokuapp.com/'
 
 class Wishlist extends React.Component {
     constructor(props) {
@@ -10,7 +11,7 @@ class Wishlist extends React.Component {
     }
 
     componentDidMount() {
-        Axios.get(`http://localhost:2000/products?wishlist=true`)
+        Axios.get(`${API}products?wishlist=true`)
             .then(res => {
                 this.setState({ prodWithWish: res.data })
             })

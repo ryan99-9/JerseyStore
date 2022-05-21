@@ -40,7 +40,6 @@
     }
 }
 .mainLayer{
-    background-color: aqua;
     padding-top: 2rem;
 }
 /* .second_layer{
@@ -56,21 +55,18 @@
     width: 85vw;
     margin-left: auto;
     margin-right: auto;
-    background-color: chartreuse;
 }
 .car{
-    background-color: darkolivegreen;
     margin-top: -1.3rem;
     margin-left: -1.3rem;
 }
 .imgCarousel{
     width: 100vw;
 }
-.carItem{
+/* .carItem{
     background-color: magenta;
-}
+} */
 .titleLayer{
-    background-color: firebrick;
     margin-top: 14rem;
     padding: 1rem; 
     margin-left: 4rem;
@@ -82,7 +78,6 @@
     justify-content: space-between; 
     align-items: center; 
     margin-left: 4rem;
-    background-color: midnightblue;
 }
 
 .product{
@@ -91,7 +86,6 @@
     justify-content: space-around;
     margin-top: 0rem;
     padding: 3.125rem;
-    background-color: gold;
 }
 .cardText {
 overflow: hidden;
@@ -106,13 +100,10 @@ white-space: nowrap;
     
 }
 .thirdLayer{
-    background-color: rgb(240, 238, 238);
     background-image:url();
     background-size:auto;
-    background-color: peru;
 }
 .paymentLayer{
-    background-color: khaki;
     display: flex;
     flex-direction: column;
 }
@@ -125,7 +116,6 @@ white-space: nowrap;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #6b6161 ;
     border-top: 1px solid black;
-    background-color: hotpink;
     text-align: center;
 }
 .imagePayment{
@@ -135,7 +125,6 @@ white-space: nowrap;
      margin-right: 20rem; */
     margin-top: 2rem; 
     margin-bottom: 4rem;
-    background-color: mediumspringgreen;
     justify-content: center;
 }
 /* .img{
@@ -148,7 +137,6 @@ white-space: nowrap;
     border-top: 1px solid black;
     padding-top: 1.25rem;
     text-align: center;
-    background-color: lightskyblue;
 }
 .contItemContact{
     margin: 15px 20px;

@@ -1,8 +1,8 @@
 import Axios from 'axios'
-
+const API = 'https://database-jersey.herokuapp.com/'
 export const login = (username, password) => {
     return (dispatch) => {
-        Axios.get(`http://localhost:2000/users?username=${username}&password=${password}`)
+        Axios.get(`${API}users?username=${username}&password=${password}`)
             .then(res => {
                 // console.log(res.data[0]);
                 // console.log(res.data);
@@ -47,7 +47,7 @@ export const logOut = () => {
 
 export const keepLogin = (id) => {
     return (dispatch) => {
-        Axios.get(`http://localhost:2000/users/${id}`)
+        Axios.get(`${API}users/${id}`)
             .then(res => {
                 return dispatch({
                     type: 'LOGIN',
@@ -63,7 +63,7 @@ export const keepLogin = (id) => {
 export const register = (username, email, addingData) => {
     return (dispatch) => {
         // cek kesamaan username di database
-        Axios.get(`http://localhost:2000/users?username=${username}`)
+        Axios.get(`${API}users?username=${username}`)
             .then(res => {
                 if (res.data.length !== 0) {
                     return dispatch({
@@ -71,7 +71,7 @@ export const register = (username, email, addingData) => {
                     })
                 }
                 // cek kesamaan email di database
-                Axios.get(`http://localhost:2000/users?email=${email}`)
+                Axios.get(`${API}users?email=${email}`)
                     .then(res => {
                         if (res.data.length !== 0) {
                             return dispatch({
@@ -79,7 +79,7 @@ export const register = (username, email, addingData) => {
                             })
                         }
                         // post data user baru
-                        Axios.post('http://localhost:2000/users', addingData)
+                        Axios.post(`${API}users`, addingData)
                             .then(res => {
                                 console.log(res.data);
                                 return dispatch({
@@ -94,7 +94,7 @@ export const register = (username, email, addingData) => {
 
 
     // return (dispatch) => {
-    //     Axios.post('http://localhost:2000/users', addingData)
+    //     Axios.post('${API}users', addingData)
     //         return dispatch({
     //             type: 'SUCCESS_REGIST'
     //         })
