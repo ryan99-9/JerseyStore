@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/JerseyStore/static/css/main.a1af774b.css",
+    "main.js": "/JerseyStore/static/js/main.2f4263ce.js",
+    "static/media/mu.png": "/JerseyStore/static/media/mu.18b81f319649b65e891b.png",
+    "static/media/BCA.png": "/JerseyStore/static/media/BCA.7f3479e1581ab5f5ed0d.png",
+    "static/media/BRI.png": "/JerseyStore/static/media/BRI.278cd927417badad34eb.png",
+    "static/media/back.jpg": "/JerseyStore/static/media/back.7220d3d1a5bb727faa85.jpg",
+    "static/media/SHOPEE.png": "/JerseyStore/static/media/SHOPEE.53bc074177e4e39d90fc.png",
+    "static/media/storeLogo.png": "/JerseyStore/static/media/storeLogo.7e6e2ff063c047154744.png",
+    "static/media/layerMerah.jpg": "/JerseyStore/static/media/layerMerah.7edca47b2b21c8362f28.jpg",
+    "static/media/GoPAY.png": "/JerseyStore/static/media/GoPAY.b6d4f27fa962fcc094a4.png",
+    "static/media/layer2.jpg": "/JerseyStore/static/media/layer2.0ca144ed85f486608b63.jpg",
+    "static/media/LINK AJA.png": "/JerseyStore/static/media/LINK AJA.0d8ca7d0baa14d8ad320.png",
+    "index.html": "/JerseyStore/index.html",
+    "main.a1af774b.css.map": "/JerseyStore/static/css/main.a1af774b.css.map",
+    "main.2f4263ce.js.map": "/JerseyStore/static/js/main.2f4263ce.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a1af774b.css",
+    "static/js/main.2f4263ce.js"
+  ]
+}
